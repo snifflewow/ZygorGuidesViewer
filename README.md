@@ -46,7 +46,7 @@ Alliance (empty rows mean no updates yet) :
 | Guide | Status |
 |-----------|--------|
 | dwarf1-13 | |
-| human1-13 | |
+| human1-13 | (1-9 only for now) |
 | gnome1-13 | |
 | elf1-13 | |
 | main13-20 | |
