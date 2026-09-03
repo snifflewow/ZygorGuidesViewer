@@ -225,13 +225,17 @@ function Goal:IsComplete()
 
 			--]]
 
+    -- If quest was never accepted (not in log and not completed), it's impossible to turn in
+    local completed = ZGV.completedQuests[self.questid]
+      or (not ZGV.CurrentGuide.daily and ZGV.db.char.permaCompletedDailies[self.questid])
+    if not completed and not inlog then
+      return false, false -- Quest never accepted, turnin is impossible
+    end
+
     -- Completed if it's in the completed bin, but NOT in the log.
     -- If it's in the log, it couldn't be completed; this fixes some weird multiple-completion quests, like #348 Stranglethorn Fever.
     -- completeable if it's in the log and complete or non-goaled.
-    local turned = (
-      ZGV.completedQuests[self.questid]
-      or (not ZGV.CurrentGuide.daily and ZGV.db.char.permaCompletedDailies[self.questid])
-    ) and not inlog
+    local turned = completed and not inlog
     return turned, turned or (inlog and (inlog.complete or #inlog.goals == 0))
   end
 
@@ -546,6 +550,24 @@ function Goal:IsComplete()
     return IsSpellKnown(self.spellid), true
   elseif self.action == 'learnpetspell' then
     return IsSpellKnown(self.spellid, true), true
+  elseif self.action == 'talk' or self.action == 'vendor' or self.action == 'trainer' then
+    if ZGV.recentlyVisitedCoords[self] then
+      return true, true
+    end
+    if self.x then
+      local px, py = GetPlayerMapPosition('player')
+      local gx, gy, dist = self.x / 100, self.y / 100, self.dist / 100
+      local realdist2 = (px - gx) * (px - gx) + (py - gy) * (py - gy)
+
+      if realdist2 <= dist * dist then
+        ZGV.recentlyVisitedCoords[self] = true
+        return true, true
+      else
+        return false, true
+      end
+    else
+      return false, true
+    end
   end
 
   return false, false
