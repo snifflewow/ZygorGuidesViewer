@@ -844,7 +844,7 @@ function me:SetGuide(name, step, temp)
 
     self.CurrentGuide = guide
 
-    self:Print(L['message_loadedguide']:format(name))
+    --self:Print(L['message_loadedguide']:format(name))
 
     self.CurrentGuideIsTemporary = temp
 
@@ -4574,7 +4574,7 @@ function me:OnGuidesLoaded()
 
   self.pause = true
 
-  self:Print(L['welcome_guides']:format(#self.registeredguides))
+  --self:Print(L['welcome_guides']:format(#self.registeredguides))
 
   self:UpdateFrame(true)
 
