@@ -1199,18 +1199,35 @@ function Foglight:WorldMapFrame_UpdateOverlays()
 
 	local prefix = "Interface\\WorldMap\\"..mapfile.."\\"
 	local zoneTable = self.data[mapfile]
-	if not zoneTable then return end
 
 	local numOverlays = PreZygor_GetNumMapOverlays()
-	local len = string.len(prefix)+1
-	for i=1, numOverlays do
-		local tname,tw,th,ofx,ofy = GetMapOverlayInfo(i)
-		tname = string.sub(tname, len)
-		local num = tw + th * 1024 + ofx * 1048576 + ofy * 1073741824
-		if num ~= 0 and num ~= 131200 and tname ~= "" then --and tname:lower() ~= "pixelfix" 
-			local tab = {tw,th,ofx,ofy}
-			discovered[tname] = tab
-			--zoneTable[tname] = tab
+
+	-- For custom/unknown zones without hardcoded data, preserve original overlays
+	if not zoneTable then
+		if numOverlays == 0 then return end
+		zoneTable = {}
+		local len = string.len(prefix)+1
+		for i=1, numOverlays do
+			local tname,tw,th,ofx,ofy = PreZygor_GetMapOverlayInfo(i)
+			if tname then
+				tname = string.sub(tname, len)
+				zoneTable[tname] = {tw,th,ofx,ofy}
+			end
+		end
+	else
+		-- For known zones, still preserve original overlay info
+		local len = string.len(prefix)+1
+		for i=1, numOverlays do
+			local tname,tw,th,ofx,ofy = PreZygor_GetMapOverlayInfo(i)
+			if tname then
+				tname = string.sub(tname, len)
+				local num = tw + th * 1024 + ofx * 1048576 + ofy * 1073741824
+				if num ~= 0 and num ~= 131200 and tname ~= "" then --and tname:lower() ~= "pixelfix"
+					local tab = {tw,th,ofx,ofy}
+					discovered[tname] = tab
+					--zoneTable[tname] = tab
+				end
+			end
 		end
 	end
 
