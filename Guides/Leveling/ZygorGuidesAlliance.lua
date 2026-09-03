@@ -314,7 +314,7 @@ step
 Enter the building |goto Elwynn Forest 38.9,68.4 < 10 |walk
 talk William Pestle##253
 |tip Inside the building.
-accept Kobold Candles##60 |goto Elwynn Forest 38.9,68.4
+accept Kobold Candles##60 |goto Elwynn Forest 38,68.3
 step
 talk Innkeeper Farley##295
 |tip Inside the building.
@@ -551,7 +551,7 @@ turnin Goldtooth##87 |goto Elwynn Forest 34.49,84.25
 step
 talk Remy "Two Times"##241
 turnin Gold Dust Exchange##47 |goto Elwynn Forest 38.5,70.1
-accept A Fishy Peril##40 |goto Elwynn Forest 38.5,70.1
+accept A Fishy Peril##40 |goto Elwynn Forest 38.5,70
 step
 talk Marshal Dughan##240
 turnin A Fishy Peril##40 |goto Elwynn Forest 39.5,68.9
@@ -1623,6 +1623,10 @@ talk Rudra Amberstill##1265
 turnin Protecting the Herd##314 |goto Dun Morogh 63.08,49.89
 |only if readyq(314)
 step
+talk Miner Grumnal##1360
+accept Ore for Grumnal##26687 |goto Dun Morogh 69.00,55.10
+|tip You will mine Kinetic Ore inside the Gol'Bolar Quarry Mine.
+step
 talk Senator Mehr Stonehallow##1977
 accept The Public Servant##433 |goto Dun Morogh 68.67,55.97
 step
@@ -1634,6 +1638,10 @@ Enter the cave |goto Dun Morogh 70.70,56.49 < 20 |walk
 kill 10 Rockjaw Bonesnapper##1117 |q 433/1 |goto Dun Morogh 70.98,54.77
 |tip Inside the cave.
 |tip Watch for patrols and respawns while inside the cave. |only if hardcore
+step
+mine 10 Kinetic Ore##62500 |q 26687/1 |goto Dun Morogh 70.98,54.77
+|tip These ore nodes are found inside the Gol'Bolar Quarry Mine.
+|tip Mine them while you're in the cave fighting the troggs.
 step
 label "Kill_Rockjaw_Skullthumpers"
 kill 6 Rockjaw Skullthumper##1115 |q 432/1 |goto Dun Morogh 70.70,56.49
@@ -1654,6 +1662,9 @@ turnin The Public Servant##433 |goto Dun Morogh 68.67,55.97
 step
 talk Foreman Stonebrow##1254
 turnin Those Blasted Troggs!##432 |goto Dun Morogh 69.08,56.33
+step
+talk Miner Grumnal##1360
+turnin Ore for Grumnal##26687 |goto Dun Morogh 69.00,55.10
 step
 Follow the road |goto Dun Morogh 67.68,52.75 < 40 |only if walking and subzone("Gol'Bolar Quarry")
 Follow the road and run through the tunnel |goto Dun Morogh 81.21,42.70 < 10 |only if walking and not subzone("North Gate Outpost")
@@ -1693,6 +1704,7 @@ Enter the building |goto Loch Modan 35.23,47.75 < 7 |walk
 talk Vidra Hearthstove##1963
 |tip Inside the building.
 accept Thelsamar Blood Sausages##418 |goto Loch Modan 34.83,49.28
+|tip This can be completed later.
 stickystop "Collect_Boar_Intestines"
 stickystop "Collect_Spider_Ichors"
 stickystop "Collect_Bear_Meat"
@@ -1700,6 +1712,7 @@ step
 talk Yanni Stoutheart##1682
 |tip Inside the building.
 |tip If you can afford it, and you need more bag space, buy bags.
+accept A Proper Sendoff##26838 |goto Loch Modan 34.76,48.62
 Visit the Vendor |vendor Yanni Stoutheart##1682 |goto Loch Modan 34.76,48.62 |q 416 |future
 step
 map Loch Modan
@@ -1718,6 +1731,7 @@ stickystart "Collect_Spider_Ichors"
 stickystart "Collect_Bear_Meat"
 stickystart "Collect_Tunnel_Rat_Ears"
 stickystart "Collect_Linen_Cloth_Paladin"
+stickystart "Collect_Bhondurs_Bones"
 step
 click Miners' League Crates##271
 |tip They look like piles of brown boxes on the ground around this area inside the mine.
@@ -1740,6 +1754,12 @@ Kill Tunnel Rat enemies around this area
 collect 10 Linen Cloth##2589 |goto Loch Modan 24.57,29.79 |q 1644 |future
 You can find more around [26.08,43.64]
 |only if Human Paladin
+step
+label "Collect_Bhondurs_Bones"
+Leave the mine |goto Loch Modan 35.48,18.85 < 10 |walk |only if subzone("Silver Stream Mine") and _G.IsIndoors()
+click Bhondur's Corpse |notinsticky
+collect 1 Bhondur's Bones##62667 |q 26838/1 |goto Loch Modan 35.48,18.85
+|tip Inside the Silver Stream Mine. This quest is available to all players.
 step
 talk Mountaineer Stormpike##1343
 |tip Upstairs inside the building.
@@ -1773,6 +1793,10 @@ talk Vidra Hearthstove##1963
 |tip Inside the building.
 turnin Thelsamar Blood Sausages##418 |goto Loch Modan 34.83,49.28
 step
+talk Yanni Stoutheart##1682
+|tip Inside the building nearby.
+turnin A Proper Sendoff##26838 |goto Loch Modan 34.76,48.62
+step
 map Loch Modan
 path follow strictbounce; loop off; ants straight; dist 20; markers none
 path	32.67,49.72	33.27,49.16	33.86,48.37	34.30,47.64	34.91,47.05
@@ -1782,11 +1806,11 @@ talk Mountaineer Kadrell##1340
 |tip He walks around this area.
 turnin Rat Catching##416
 step
-talk Thorgrum Borrelson##1572
-fpath Thelsamar |goto Loch Modan 33.94,50.95
-step
 talk Mountaineer Cobbleflint##1089
 accept In Defense of the King's Lands##224 |goto Loch Modan 22.07,73.12
+step
+talk Thorgrum Borrelson##1572
+fpath Thelsamar |goto Loch Modan 33.94,50.95
 step
 Enter the building |goto Loch Modan 23.71,75.47 < 10 |walk
 talk Captain Rugelfuss##1092
@@ -3538,10 +3562,12 @@ Enter the building |goto Loch Modan 35.23,47.75 < 7 |walk
 talk Vidra Hearthstove##1963
 |tip Inside the building.
 accept Thelsamar Blood Sausages##418 |goto Loch Modan 34.83,49.28
+|tip This can be completed later.
 step
 talk Yanni Stoutheart##1682
 |tip Inside the building.
 |tip If you can afford it, and you need more bag space, buy bags.
+accept A Proper Sendoff##26838 |goto Loch Modan 34.76,48.62
 Visit the Vendor |vendor Yanni Stoutheart##1682 |goto Loch Modan 34.76,48.62 |q 416 |future
 step
 map Loch Modan
@@ -3637,6 +3663,9 @@ path	37.29,43.33	36.73,41.98
 talk Mountaineer Kadrell##1340
 |tip He walks around this area.
 turnin Rat Catching##416
+step
+talk Mountaineer Cobbleflint##1089
+accept In Defense of the King's Lands##224 |goto Loch Modan 22.07,73.12
 step
 talk Thorgrum Borrelson##1572
 fpath Thelsamar |goto Loch Modan 33.94,50.95
@@ -3748,9 +3777,6 @@ Enter the building |goto Loch Modan 35.23,47.74 < 10 |walk
 talk Innkeeper Hearthstove##6734
 |tip Inside the building.
 home Stoutlager Inn |goto Loch Modan 35.53,48.40
-step
-talk Mountaineer Cobbleflint##1089
-accept In Defense of the King's Lands##224 |goto Loch Modan 22.07,73.12
 step
 Enter the building |goto Loch Modan 23.71,75.47 < 10 |walk
 talk Captain Rugelfuss##1092
@@ -5461,6 +5487,9 @@ step
 talk Foreman Stonebrow##1254
 turnin Those Blasted Troggs!##432 |goto Dun Morogh 69.08,56.33
 step
+talk Miner Grumnal##1360
+turnin Ore for Grumnal##26687 |goto Dun Morogh 69.00,55.10
+step
 Follow the road |goto Dun Morogh 67.68,52.75 < 40 |only if walking and subzone("Gol'Bolar Quarry")
 Follow the road and run through the tunnel |goto Dun Morogh 81.21,42.70 < 10 |only if walking and not subzone("North Gate Outpost")
 talk Pilot Hammerfoot##1960
@@ -5504,6 +5533,7 @@ Enter the building |goto Loch Modan 35.23,47.75 < 7 |walk
 talk Vidra Hearthstove##1963
 |tip Inside the building.
 accept Thelsamar Blood Sausages##418 |goto Loch Modan 34.83,49.28
+|tip This can be completed later.
 stickystop "Collect_Boar_Intestines"
 stickystop "Collect_Spider_Ichors"
 stickystop "Collect_Bear_Meat"
@@ -5511,6 +5541,7 @@ step
 talk Yanni Stoutheart##1682
 |tip Inside the building.
 |tip If you can afford it, and you need more bag space, buy bags.
+accept A Proper Sendoff##26838 |goto Loch Modan 34.76,48.62
 Visit the Vendor |vendor Yanni Stoutheart##1682 |goto Loch Modan 34.76,48.62 |q 416 |future
 step
 map Loch Modan
@@ -5583,6 +5614,10 @@ talk Vidra Hearthstove##1963
 |tip Inside the building.
 turnin Thelsamar Blood Sausages##418 |goto Loch Modan 34.83,49.28
 step
+talk Yanni Stoutheart##1682
+|tip Inside the building nearby.
+turnin A Proper Sendoff##26838 |goto Loch Modan 34.76,48.62
+step
 map Loch Modan
 path follow strictbounce; loop off; ants straight; dist 20; markers none
 path	32.67,49.72	33.27,49.16	33.86,48.37	34.30,47.64	34.91,47.05
@@ -5592,11 +5627,11 @@ talk Mountaineer Kadrell##1340
 |tip He walks around this area.
 turnin Rat Catching##416
 step
-talk Thorgrum Borrelson##1572
-fpath Thelsamar |goto Loch Modan 33.94,50.95
-step
 talk Mountaineer Cobbleflint##1089
 accept In Defense of the King's Lands##224 |goto Loch Modan 22.07,73.12
+step
+talk Thorgrum Borrelson##1572
+fpath Thelsamar |goto Loch Modan 33.94,50.95
 step
 Enter the building |goto Loch Modan 23.71,75.47 < 10 |walk
 talk Captain Rugelfuss##1092
@@ -5803,6 +5838,7 @@ ZygorGuidesViewer:RegisterGuide(
 step
 talk Cerellean Whiteclaw##3644
 |tip On the dock.
+accept Welcome to Auberdine##26203 |goto Darkshore 35.74,43.71
 accept For Love Eternal##963 |goto Darkshore 35.74,43.71
 step
 talk Wizbang Cranktoggle##3666
@@ -5815,6 +5851,9 @@ step
 talk Caylais Moonfeather##3841
 fpath Auberdine |goto Darkshore 36.34,45.58
 step
+talk Quartermaster Nyana##10218
+turnin Welcome to Auberdine##26203 |goto Darkshore 37.37,45.12
+step
 talk Barithras Moonshade##3583
 accept Cave Mushrooms##947 |goto Darkshore 37.32,43.64
 |tip You can skip it, but it is part of a large quest chain worth 6,660 xp. |only if hardcore
@@ -5823,12 +5862,18 @@ step
 talk Sentinel Glynda Nal'Shea##2930
 |tip She walks around this area.
 accept The Red Crystal##4811 |goto Darkshore 37.70,43.39
+accept Balancing the Forest##26200 |goto Darkshore 37.70,43.39
+accept Wanted: Grizzletooth##26208 |goto Darkshore 37.70,43.39
 step
 Enter the building |goto Darkshore 37.77,41.36 < 15 |walk
 talk Dalmond##4182
 |tip Inside the building.
 |tip If you can afford it, and you need more bag space, buy bags.
 Visit the Vendor |vendor Dalmond##4182 |goto Darkshore 37.45,40.50 |q 4811
+step
+talk Bill Wheeland##45038
+accept My Sister Isabetta##27205 |goto Darkshore 37.5,41.6
+accept The Greymist Menace##26204 |goto Darkshore 37.5,41.6
 step
 talk Thundris Windweaver##3649
 |tip Inside the building.
@@ -5883,6 +5928,13 @@ Run up the ramp |goto Darkshore 36.70,45.02 < 10 |only if walking
 talk Gwennyth Bly'Leggonde##10219
 turnin Washed Ashore##4681 |goto Darkshore 36.62,45.59
 stickystop "Collect_Thresher_Eyes"
+step
+talk Isabetta Wheeland##46067
+|tip At her home on an island south of Auberdine.
+complete My Sister Isabetta |q 27205/1 |goto Darkshore 32.00,64.00
+step
+talk Isabetta Wheeland##46067
+turnin My Sister Isabetta##27205 |goto Darkshore 32.00,64.00
 step
 talk Innkeeper Shaussiy##6737
 |tip Inside the building.
@@ -5992,6 +6044,25 @@ talk Sentinel Glynda Nal'Shea##2930
 |tip She walks around this area.
 turnin The Red Crystal##4811 |goto Darkshore 37.71,43.39
 accept As Water Cascades##4812 |goto Darkshore 37.71,43.39
+step
+kill 5 Young Moonkin##2106+
+kill 10 Moonkin##2105+
+collect quest objectives for Balancing the Forest |q 26200/1 |goto Darkshore 45.50,50.00
+|tip These are in the moonkin area east of Auberdine.
+step
+talk Sentinel Glynda Nal'Shea##2930
+|tip She walks around this area.
+turnin Balancing the Forest##26200 |goto Darkshore 37.71,43.39
+accept Balancing the Forest##26201 |goto Darkshore 37.71,43.39
+step
+kill 3 Moonkin Oracle##10159+
+kill 10 Raging Moonkin##10160+
+collect quest objectives for Balancing the Forest follow-up |q 26201/1 |goto Darkshore 45.50,50.00
+|tip These are further back in the moonkin colony, east of Auberdine.
+step
+talk Sentinel Glynda Nal'Shea##2930
+|tip She walks around this area.
+turnin Balancing the Forest##26201 |goto Darkshore 37.71,43.39
 step
 use the Empty Water Tube##14338
 collect Moonwell Water Tube##14339 |q 4812/1 |goto Darkshore 37.79,44.06
@@ -6120,6 +6191,19 @@ click Beached Sea Turtle##176190
 |tip Greymist Seers will heal. |only if hardcore
 |tip Greymist Coastrunners will run away quickly when at low health, so pull them away from the creature as best possible. |only if hardcore
 accept Beached Sea Turtle##4722 |goto Darkshore/0 37.14,62.16
+step
+kill Greymist Murlocs around this area
+collect quest objectives for The Greymist Menace |q 26204/1 |goto Darkshore 36.00,55.00
+|tip These are found along the southern Darkshore coast.
+step
+kill Greymist Murlocs further south
+collect quest objectives for The Greymist Menace follow-up |q 26205/1 |goto Darkshore 33.00,60.00
+|tip These are stronger murlocs found further south along the coast.
+step
+Travel to Blackwood Den in southern Darkshore |goto Darkshore 35.50,79.00
+kill Grizzletooth##45041
+|tip This bear is at Blackwood Den, near the Ashenvale border.
+complete Wanted: Grizzletooth |q 26208/1 |goto Darkshore 35.50,79.00
 stickystart "Kill_Blackwood_Windtalkers"
 step
 kill 8 Blackwood Pathfinder##2167 |q 985/1 |goto Darkshore/0 39.93,56.19
@@ -6159,6 +6243,17 @@ talk Gwennyth Bly'Leggonde##10219
 turnin Beached Sea Turtle##4722 |goto Darkshore/0 36.62,45.60
 turnin Beached Sea Creature##4728 |goto Darkshore/0 36.62,45.60
 step
+talk Bill Wheeland##45038
+turnin The Greymist Menace##26204 |goto Darkshore 37.5,41.6
+accept The Greymist Menace##26205 |goto Darkshore 37.5,41.6
+step
+talk Bill Wheeland##45038
+turnin The Greymist Menace##26205 |goto Darkshore 37.5,41.6
+step
+talk Sentinel Glynda Nal'Shea##2930
+|tip She walks around this area.
+turnin Wanted: Grizzletooth##26208 |goto Darkshore 37.70,43.39
+step
 talk Tharnariun Treetender##3701
 turnin Cleansing of the Infected##2138 |goto Darkshore/0 38.84,43.41
 step
@@ -6179,6 +6274,18 @@ accept The Cliffspring River##4762 |goto Darkshore/0 37.40,40.13
 step
 talk Asterion##3650
 turnin Bashal'Aran##957 |goto Darkshore/0 44.17,36.30
+step
+talk Archaeologist Everit##46076
+accept Personal Possessions##27223 |goto Darkshore 35.7,83.6
+accept Rampaging Golems##27224 |goto Darkshore 35.7,83.6
+step
+collect Archaeologist Everit's personal possessions around the excavation |q 27223/1 |goto Darkshore 35.7,83.6
+step
+kill Cracked Golem and Stone Behemoth enemies around the excavation |q 27224/1 |goto Darkshore 35.7,83.6
+step
+talk Archaeologist Everit##46076
+turnin Personal Possessions##27223 |goto Darkshore 35.7,83.6
+turnin Rampaging Golems##27224 |goto Darkshore 35.7,83.6
 step
 Enter the building |goto Darnassus 35.49,10.63 < 10 |walk
 talk Mathrengyl Bearwalker##4217
@@ -6409,6 +6516,26 @@ talk Lina Hearthstove##9989
 Click Here to Continue |confirm |goto Loch Modan 34.64,48.09 |q 436 |future
 |only if Hunter
 step
+talk Kali Healtouch##1473
+talk Mountaineer Ozmok##2510
+accept Medicinal Restocking##26842 |goto Loch Modan 36.5,48.5
+accept Securing the Loch##26843 |goto Loch Modan 35,46.8
+accept WANTED: Mother Tessa##26845
+|tip This is a group quest and can be completed along the way.
+step
+collect 8 Loch Weed##62671 |q 26842/1 |goto Loch Modan 40,55
+|tip These grow in the water of The Loch.
+|tip You can also collect them while doing the threshadon kills below.
+step
+kill 10 Young Threshadon##1224 |q 26843/1 |goto Loch Modan 45,60
+|tip These creatures are in The Loch.
+|tip This quest is a group quest but can be done solo.
+step
+kill Mother Tessa##45824 |q 26845/1 |goto Loch Modan 51.6,62.2
+|tip This is a level 20 elite threshadon.
+|tip This is a group quest. Group up before attempting.
+|tip You can come back to this later if needed.
+step
 Enter the building |goto Loch Modan 37.18,47.10 < 10 |walk
 talk Jern Hornhelm##1105
 |tip Downstairs inside the building.
@@ -6444,6 +6571,7 @@ collect 8 Carved Stone Idol##2636 |q 297/1 |goto Loch Modan 70.31,62.79
 step
 talk Magmar Fellhew##1345
 turnin Gathering Idols##297 |goto Loch Modan 64.90,66.65
+accept The Strange Idol##26844 |goto Loch Modan 64.90,66.65
 step
 Follow the path |goto Loch Modan 66.22,52.81 < 40 |only if walking
 Follow the path |goto Loch Modan 81.86,59.10 < 40 |only if walking
@@ -6614,6 +6742,13 @@ buy Fine Longbow##11304 |n
 Visit the Vendor |vendor Cliff Hadin##1687 |goto Loch Modan 83.02,62.96 |q 385
 |only if Hunter and itemcount(11304) == 0
 step
+talk Kali Healtouch##1473
+talk Mountaineer Ozmok##2510
+talk Magistrate Bluntnose##1139
+turnin Medicinal Restocking##26842 |goto Loch Modan 36.5,48.5
+turnin Securing the Loch##26843 |goto Loch Modan 35,46.8
+turnin WANTED: Mother Tessa##26845 |goto Loch Modan 34.6,44.5
+step
 talk Lina Hearthstove##9989
 |tip Abandon your temporary pet and get your permanent pet from the stable.
 |tip Teach "Bite 3" to your permanent pet.
@@ -6625,6 +6760,11 @@ talk Jern Hornhelm##1105
 |tip Downstairs inside the building.
 |tip He sometimes walks out near the entrance of the building.
 turnin Excavation Progress Report##298 |goto Loch Modan 37.24,47.39
+step
+Enter the building |goto Ironforge 74.64,11.73 < 7 |walk
+talk Prospector Stormpike##1356
+|tip Inside the building.
+turnin The Strange Idol##26844 |goto Ironforge 74.64,11.73
 step
 Enter the building |goto Ironforge 72.18,67.50 < 7 |walk
 talk Skolmin Goldfury##5122
@@ -6733,6 +6873,7 @@ accept The Lost Tools##125 |goto Redridge Mountains 32.14,48.64
 step
 talk Verner Osgood##415
 accept The Price of Shoes##118 |goto Redridge Mountains 30.98,47.28
+accept One Of Each##26846 |goto Redridge Mountains 30.98,47.28
 step
 Enter the building |goto Redridge Mountains 29.50,46.12 < 10 |walk
 talk Magistrate Solomon##344
@@ -7453,6 +7594,28 @@ ZygorGuidesViewer:RegisterGuide(
   },
   [[
 step
+Travel to Darkshore
+|tip From Stormwind: Take the Deeprun Tram to Ironforge.
+|tip The Tram entrance is in the Trade District of Stormwind.
+Run to the Tram |goto Stormwind City 66.65,16.25 < 10 |walk
+Enter the Deeprun Tram |goto Stormwind City 69.44,10.50 < 5 |walk
+step
+Board the Deeprun Tram |confirm |goto Ironforge 210.24,47.27
+|tip The Tram takes about 1 minute to arrive in Ironforge.
+Click Here to Continue |confirm
+step
+Get a flight path to Menethil |goto Ironforge 74.46,60.92 < 15 |walk
+|tip Head to the Flight Master in Ironforge.
+step
+Fly to Menethil Harbor |goto Wetlands 8.73,59.15 < 5
+|tip The flight takes about 2 minutes. Once you arrive, head to the docks.
+step
+Board the boat to Auberdine |goto Wetlands 8.8,71 < 5
+|tip Look for the boat docked at the Menethil Harbor docks.
+|tip It departs regularly to Auberdine in Darkshore.
+Click Here to Continue |confirm |goto Darkshore 36.34,45.58
+|tip You are now in Auberdine in Darkshore. The boat will dock here automatically.
+step
 click WANTED: Murkdeep!##175320
 accept WANTED: Murkdeep!##4740 |goto Darkshore 37.23,44.23
 |only if not hardcore
@@ -7842,6 +8005,8 @@ ZygorGuidesViewer:RegisterGuide(
 step
 talk Orendil Broadleaf##3847
 accept Bathran's Hair##1010 |goto Ashenvale 26.44,38.59
+accept Forsaken Looters##27038 |goto Ashenvale 26.44,38.59
+accept Attack on the Foulweald##27412 |goto Ashenvale 26.44,38.59
 step
 Kill Dark Strand enemies around this area
 |tip This item has a low drop rate.
@@ -8536,6 +8701,7 @@ Visit the Vendor |vendor Fradd Swiftgear##2682 |goto Wetlands 26.40,25.76 |q 174
 step
 talk Einar Stonegrip##2093
 accept Daily Delivery##469 |goto Wetlands 49.91,39.37
+accept Message to Menethil##27021 |goto Wetlands 49.91,39.37
 step
 talk Rethiel the Greenwarden##1244
 turnin The Greenwarden##463 |goto Wetlands 56.37,40.40
@@ -8822,6 +8988,16 @@ talk Madame Eva##265
 |tip She walks around this area inside the building.
 accept The Legend of Stalvan##66 |goto Duskwood 75.82,45.29
 accept The Totem of Infliction##101 |goto Duskwood 75.82,45.29
+step
+talk Allison##45731
+accept A Matter of Life and Death##26711 |goto Duskwood 77.7,52.2
+|tip Look for small flowers around Duskwood as you quest.
+|tip They look like tiny flowers on the ground and are easy to miss.
+step
+collect 8 Brightwood Bloom##62530 |q 26711/1 |goto Duskwood 70,50
+|tip These are small flowers scattered throughout Duskwood.
+|tip You can collect them while doing other quests in the zone.
+|tip Check around the roads and open areas.
 step
 talk Steven Black##10062
 |tip Stable your permanent pet.
@@ -9135,6 +9311,12 @@ talk Zardeth of the Black Claw##1435
 accept A Noble Brew##335 |goto Stormwind City 26.45,78.66
 step
 Leave the building |goto Stormwind City 29.15,74.15 < 10 |walk |only if subzone("The Slaughtered Lamb")
+Run through Duskwood |goto Duskwood 77.7,52.2 < 10 |walk
+talk Allison##45731
+turnin A Matter of Life and Death##26711 |goto Duskwood 77.7,52.2
+accept A Matter of Life and Death##26712 |goto Duskwood 77.7,52.2
+|tip This quest chain will be completed later. Set aside the items you've collected and continue with other quests.
+step
 Enter the building |goto Duskwood 75.55,45.37 < 10 |walk
 talk Madame Eva##265
 |tip She walks around this area inside the building.
@@ -9319,6 +9501,14 @@ buy Broad Bladed Knife##12247 |n
 |tip It may not be available to buy, since it's a limited supply item.
 Visit the Vendor |vendor Gavin Gnarltree##225 |goto Duskwood 73.60,50.04 |q 159
 |only if Rogue and itemcount(12247) == 0
+step
+collect 5 Fresh Bone Powder##62531 |q 26712/1 |goto Duskwood 75,42
+|tip You can find these on the undead creatures in the Duskwood graveyards.
+|tip Collect them from any undead in the zone.
+|tip You can also collect them while doing other quests.
+step
+talk Allison##45731
+turnin A Matter of Life and Death##26712 |goto Duskwood 77.7,52.2
 ]]
 )
 ZygorGuidesViewer:RegisterGuide(
@@ -9391,6 +9581,21 @@ collect Fangore's Paw##3632 |q 180/1 |goto Redridge Mountains/0 78.93,38.46
 Also check around [84.46,50.51]
 |only if not hardcore
 step
+Follow the path down |goto Redridge Mountains/0 89,70.9 < 15 |walk
+talk Clyde Ranthal##2697
+accept Clyde's Special Thread##26848 |goto Redridge Mountains/0 89,70.9
+step
+accept Gnoll Patrol##26849 |goto Redridge Mountains/0 89,70.9
+|tip This quest requires you to complete Clyde's Special Thread first.
+step
+kill 7 Shadowhide Brute##432 |q 26849/1 |goto Redridge Mountains/0 77.98,39.66
+|tip Enemies around camps tend to pull in groups so be wary. |only if hardcore
+|tip Watch for patrols and respawns here. |only if hardcore
+step
+kill 7 Shadowhide Warrior##568 |q 26849/2 |goto Redridge Mountains/0 77.98,39.66
+|tip Enemies around camps tend to pull in groups so be wary. |only if hardcore
+|tip Watch for patrols and respawns here. |only if hardcore
+step
 label "Collect_Shadowhide_Pendants"
 Kill Shadowhide enemies around this area
 |tip They look like gnolls.
@@ -9411,6 +9616,10 @@ You can find more around: |notinsticky
 [76.82,54.09]
 [83.92,54.28]
 |only if hardcore
+step
+talk Clyde Ranthal##2697
+turnin Clyde's Special Thread##26848 |goto Redridge Mountains/0 89,70.9
+turnin Gnoll Patrol##26849 |goto Redridge Mountains/0 89,70.9
 step
 Follow the road |goto Redridge Mountains/0 47.63,27.69 < 40 |only if walking
 Follow the path |goto Redridge Mountains/0 39.14,14.15 < 40 |only if walking
@@ -9462,6 +9671,7 @@ step
 talk Magistrate Solomon##344
 |tip Inside the building.
 turnin Wanted: Lieutenant Fangore##180 |goto Redridge Mountains/0 29.99,44.46
+turnin One Of Each##26846 |goto Redridge Mountains/0 29.99,44.46
 |only if not hardcore
 step
 Leave the building |goto Redridge Mountains/0 29.50,46.12 < 10 |walk |only if subzone("Lakeshire Town Hall")
@@ -9989,6 +10199,7 @@ turnin Fire Taboo##277 |goto Wetlands 56.37,40.40
 accept Blisters on The Land##275 |goto Wetlands 56.37,40.40
 step
 kill 12 Fen Creeper##1040 |q 275/1 |goto Wetlands 55.06,37.24 |count 6 |noordinal
+|tip Kill count is 12 — this is intentional, it will be completed later.
 |tip They are stealthed, usually near or in the water around this area.
 |tip You will kill more of these later.
 You can find more around: |notinsticky
@@ -11697,8 +11908,90 @@ Leave Refuge Pointe |goto Arathi Highlands 48.35,44.93 < 40 |only if walking and
 talk Quae##2712
 turnin Hints of a New Plague?##659 |goto Arathi Highlands 60.19,53.85
 accept Hints of a New Plague?##658 |goto Arathi Highlands 60.19,53.85
-stickystart "Kill_Syndicate_Highwaymen"
+accept To The Hills##26546 |goto Arathi Highlands 60.19,53.85
 step
+talk Aquamentus##45547
+accept Cooling Waters##26548 |goto Arathi Highlands 89.4,35.2
+accept A Painful Dousing##26549 |goto Arathi Highlands 89.4,35.2
+accept An Audience With Water##26550 |goto Arathi Highlands 89.4,35.2
+step
+talk Atrasies the Ancient##45548
+accept Close The Vents##26551 |goto Arathi Highlands 82.8,57.3
+accept Offering Of Feathers##26552 |goto Arathi Highlands 82.8,57.3
+step
+talk Aeromir##45555
+accept Assistance Of Air##26554 |goto Arathi Highlands 82.5,42.8
+step
+talk Atrasies the Ancient##45548
+accept Return To Fire##26556 |goto Arathi Highlands 82.8,57.3
+accept Convening The Council##26557 |goto Arathi Highlands 82.8,57.3
+step
+stickystart "Scout_Hills"
+collect 8 Cooled Aqual Essence##63106 |q 26548/1 |goto Arathi Highlands 89.4,35.2
+|tip Kill Aqual Sprayers in the water near Aquamentus.
+step
+label "Scout_Hills"
+scout the Blazing Hills for disturbances |q 26546/1 |goto Arathi Highlands 89.4,35.2
+|tip This auto-completes by exploring the area.
+step
+notinsticky
+use Bottle of Soothing Waters##63107
+collect Raging Bindings##63108 |q 26549/1 |goto Arathi Highlands 89.4,35.2
+|tip Use on weakened Raging Cinders. These are fire elementals you can find.
+step
+talk Aquamentus##45547
+accept An Audience With Water##26550 |goto Arathi Highlands 89.4,35.2
+step
+complete An Audience With Water |q 26550/1 |goto Arathi Highlands 89.4,35.2
+|tip Speaking with Aquamentus completes the objective.
+step
+kill Coal Elementals
+collapse 8 Steam Vents |q 26551/1 |goto Arathi Highlands 82.8,57.3
+|tip Use Rushing Water power on thermal vents. They're in the southern area.
+step
+collect 6 Pristine Strider Feathers##63109 |q 26552/1 |goto Arathi Highlands 82.5,42.8
+|tip Kill Striders in the area for feathers.
+step
+talk Aeromir##45555
+speak with Aeromir to complete the blessing |q 26554/1 |goto Arathi Highlands 82.5,42.8
+|tip This grants you Air blessing and transport.
+step
+talk Atrasies the Ancient##45548
+inform Atrasies that elementals will convene |q 26556/1 |goto Arathi Highlands 82.8,57.3
+step
+talk Atrasies the Ancient##45548
+witness the Council of Elements |q 26557/1 |goto Arathi Highlands 82.8,57.3
+|tip Return and speak with Atrasies to witness the council.
+step
+talk Quae##2712
+turnin To The Hills##26546 |goto Arathi Highlands 60.19,53.85
+|tip Return to Quae in Refuge Pointe.
+step
+talk Aquamentus##45547
+turnin Cooling Waters##26548 |goto Arathi Highlands 89.4,35.2
+turnin A Painful Dousing##26549 |goto Arathi Highlands 89.4,35.2
+turnin An Audience With Water##26550 |goto Arathi Highlands 89.4,35.2
+step
+talk Atrasies the Ancient##45548
+turnin Close The Vents##26551 |goto Arathi Highlands 82.8,57.3
+turnin Return To Fire##26556 |goto Arathi Highlands 82.8,57.3
+turnin Convening The Council##26557 |goto Arathi Highlands 82.8,57.3
+step
+talk Aeromir##45555
+turnin Offering Of Feathers##26552 |goto Arathi Highlands 82.5,42.8
+step
+talk Paula Alestone##45567
+accept Save The Animals##26559 |goto Arathi Highlands 94.0,71.7
+step
+go to Alestone Estate
+lasso 6 Terrified Animals##63110 |q 26559/1 |goto Arathi Highlands 94.0,71.7
+|tip Use the lasso rope on scared animals at the estate.
+|tip This quest can be bugged - if animals don't respond, skip it.
+step
+talk Paula Alestone##45567
+turnin Save The Animals##26559 |goto Arathi Highlands 94.0,71.7
+step
+stickystart "Kill_Syndicate_Highwaymen"
 kill 6 Syndicate Mercenary##2589 |q 681/2 |goto Arathi Highlands 32.67,29.22
 |tip They are also inside the buildings.					|only if not hardcore
 |tip They can also be found inside buildings, but it's dangerous to enter.	|only if hardcore
@@ -12460,6 +12753,19 @@ accept Centaur Bounty##1387 |goto Desolace 66.74,10.87
 step
 talk Vahlarriel Demonslayer##5642
 accept Vahlarriel's Search##1437 |goto Desolace 66.44,11.82
+step
+Follow the path west |goto Desolace 36.3,45.4 < 20 |walk
+talk Mannoroc Warden##46091
+accept Remnants of the Nether##27258 |goto Desolace 36.3,45.4
+accept Wanted: Wilfiz Silverbit##27265 |goto Desolace 36.3,45.4
+|tip Both quests are in the Mannoroc Coven area. Wilfiz is found north of the coven.
+step
+collect 10 Remnants of the Nether##63126 |q 27258/1 |goto Desolace 36.3,45.4
+|tip These drop from demons in Mannoroc Coven.
+|tip You can collect them while doing other quests in this area.
+step
+kill Wilfiz Silverbit##46097 |q 27265/1 |goto Desolace 51.3,68.6
+|tip He's found north of Mannoroc Coven.
 stickystart "Collect_Hatefury_Horns"
 step
 Follow the path down |goto Desolace 67.05,13.04 < 20 |only if walking and subzone("Nijel's Point")
@@ -12503,6 +12809,8 @@ step
 talk Bibbly F'utzbuckle##11438
 |tip He walks around this area.
 accept Bone Collector##5501 |goto Desolace 62.33,38.98
+accept Massive Profits##27253 |goto Desolace 62.33,38.98
+|tip Do this quest along with the Kodo Roundup coming up.
 step
 talk Azore Aldamort##11863
 accept Sceptre of Light##5741 |goto Desolace 38.88,27.17
@@ -12528,6 +12836,10 @@ Leave the water |goto Desolace 36.05,31.01 < 40 |only if walking and subzone("Sa
 talk Smeed Scrabblescrew##11596
 |tip Avoid Ghost Walker Post as you travel here.
 accept Kodo Roundup##5561 |goto Desolace 60.86,61.86
+step
+collect 3 Fossilised Gallbladder##63124 |q 27253/1 |goto Desolace 54.45,63.19
+|tip These are found in large kodo skeletons around the Kodo Graveyard.
+|tip Look for the largest skeleton remains and right-click them.
 stickystart "Collect_Kodo_Bones"
 step
 use the Kodo Kombobulator##13892
@@ -12541,6 +12853,9 @@ Gather more Kodos from here [54.45,63.19]
 step
 talk Smeed Scrabblescrew##11596
 turnin Kodo Roundup##5561 |goto Desolace 60.86,61.86
+step
+talk Bibbly F'utzbuckle##11438
+turnin Massive Profits##27253 |goto Desolace 62.33,38.98
 step
 label "Collect_Kodo_Bones"
 click Kodo Bones##176751
@@ -12562,6 +12877,15 @@ Kill Magram enemies around this area
 Reach Friendly Reputation with the Gelkis Clan Centaur |q 1382/1 |goto Desolace 70.30,73.77
 stickystop "Collect_CentaurEars"
 stickystart "Collect_Scorp_Venom"
+step
+talk Doomfang##46083
+|tip He is in the Magram Village area.
+accept An End To Dread##27237 |goto Desolace 70.30,73.77
+step
+Follow the road |goto Desolace 50.33,75.54 < 30 |only if walking
+talk Mannoroc Warden##46091
+turnin Remnants of the Nether##27258 |goto Desolace 36.3,45.4
+|tip On the way to Uthek, travel to Mannoroc Coven to turnin first.
 step
 Follow the road |goto Desolace 50.33,75.54 < 30 |only if walking
 talk Uthek the Wise##5397
@@ -12719,6 +13043,11 @@ You can find more around: |notinsticky
 [59.78,89.83]
 [64.52,82.42]
 step
+talk Mannoroc Warden##46091
+|tip Travel to Mannoroc Coven north of the village.
+turnin Wanted: Wilfiz Silverbit##27265 |goto Desolace 36.3,45.4
+turnin An End To Dread##27237 |goto Desolace 36.3,45.4
+step
 Follow the road |goto Desolace 48.39,75.67 < 40 |only if walking and not subzone("Gelkis Village")
 talk Uthek the Wise##5397
 turnin Stealing Supplies##1370 |goto Desolace 36.22,79.25
@@ -12831,6 +13160,10 @@ accept Kurzen's Mystery##207 |goto Stranglethorn Vale 37.83,3.56
 step
 talk Sergeant Yohwa##733
 accept Special Forces##574 |goto Stranglethorn Vale 38.02,3.33
+step
+talk Corporal Sethman##1422
+accept Stop The Shrinking##26902 |goto Stranglethorn Vale 37.7,3.4
+|tip This quest requires you to pick up a tablet in Booty Bay and kill trolls to unlock cages.
 step
 talk Corporal Kaleb##770
 turnin Return to Corporal Kaleb##622 |goto Stranglethorn Vale 37.74,3.30
@@ -12973,6 +13306,11 @@ collect 6 Water Elemental Bracers##3923 |q 601/1 |goto Stranglethorn Vale 21.13,
 stickystart "Collect_Bloodscalp_Ears"
 step
 Follow the path up |goto Stranglethorn Vale 21.42,10.16 < 15 |only if walking and not subzone("Ruins of Zul'Kunda")
+step
+free 8 Alliance Adventurer |q 26902/1 |goto Stranglethorn Vale 23.53,10.29
+|tip These are NPCs in cages around the Ruins of Zul'Kunda.
+|tip Click on the Alliance Adventurers to free them.
+step
 Continue up the path |goto Stranglethorn Vale 23.84,10.65 < 20 |only if walking
 click The Emperor's Tomb##54
 |tip Watch for patrols and respawns while traveling through this area.					|only if hardcore
@@ -13021,6 +13359,7 @@ accept Patrol Schedules##330 |goto Stranglethorn Vale 38.04,3.01
 step
 talk Corporal Sethman##1422
 turnin Patrol Schedules##330 |goto Stranglethorn Vale 37.66,3.39
+turnin Stop The Shrinking##26902 |goto Stranglethorn Vale 37.66,3.39
 accept Report to Doren##331 |goto Stranglethorn Vale 37.66,3.39
 step
 talk Lieutenant Doren##469
@@ -13145,6 +13484,50 @@ Kill Whelp enemies around this area
 |tip We'll come back later to finish up the quest.
 collect 10 Speck of Dream Dust##5803 |q 1116/1 |goto Swamp of Sorrows 14.74,60.20
 step
+_NOTE:_
+Pick up all the gathering quests from the quest givers around the Harborage
+talk Ocniir##45875
+accept Ocniir's Beloved Rods##26913 |goto Swamp of Sorrows 29.53,35.14
+step
+talk Barthus##45877
+accept Karabor Stew##26916 |goto Swamp of Sorrows 28.15,36.12
+accept Eight-Legged Fillets##26917 |goto Swamp of Sorrows 28.15,36.12
+accept A Real Kick##26918 |goto Swamp of Sorrows 28.15,36.12
+step
+talk Elder Ghast##11874
+accept Skins of the Swamp##26920 |goto Swamp of Sorrows 26.97,40.45
+|tip This quest has a follow-up that you'll pick up later with driftwood.
+step
+click Wanted: Spinnaret poster
+accept Wanted: Spinnaret##26923 |goto Swamp of Sorrows 23.68,43.12
+step
+click Ocniir's Chest##250357
+|goto Swamp of Sorrows 31.30,39.34
+|tip This is the shipwreck south of the Harborage.
+step
+kill 10 Silt Crawler##922 |q 26916/1 |goto Swamp of Sorrows 45,55
+|tip These are found along the eastern coast of the Swamp.
+collect 10 Massive Crawler Claw##62780 |q 26916/1
+step
+kill 10 Deathstrike Tarantula##769 |q 26917/1 |goto Swamp of Sorrows 35,45
+|tip These are found southeast of the Harborage.
+collect 10 Engorged Spider Fillet##62781 |q 26917/1
+step
+collect 8 Fire Snap Chili Pepper##62782 |q 26918/1 |goto Swamp of Sorrows 25,40
+|tip These are Fire Snap Chili plants scattered around the Swamp.
+|tip Click on the plants to collect peppers.
+step
+kill 8 Young Sawtooth Crocolisk##1084 |q 26920/1 |goto Swamp of Sorrows 24.26,41.68
+|tip You can find more around the area.
+collect 8 Thick Crocolisk Skin##62785 |q 26920/1
+step
+kill 8 Swamp Jaguar##767 |q 26920/2 |goto Swamp of Sorrows 22.74,42.75
+|tip You can find these around the swamp.
+collect 8 Tough Jaguar Skin##62786 |q 26920/2
+step
+kill Spinnaret##45883 |q 26923/1 |goto Swamp of Sorrows 40,55
+|tip This spider boss is found east of the Harborage.
+step
 Follow the path |goto Swamp of Sorrows 17.74,55.71 < 40 |only if walking and subzone("Itharius's Cave")
 talk Watcher Biggs##5476
 accept Encroaching Wildlife##1396 |goto Swamp of Sorrows 26.74,59.83
@@ -13252,6 +13635,20 @@ turnin Draenethyst Crystals##1389 |goto Swamp of Sorrows 25.99,31.40
 step
 talk Watcher Biggs##5476
 turnin The Lost Caravan##1421 |goto Swamp of Sorrows 26.74,59.83
+step
+talk Ocniir##45875
+turnin Ocniir's Beloved Rods##26913 |goto Swamp of Sorrows 29.53,35.14
+step
+talk Barthus##45877
+turnin Karabor Stew##26916 |goto Swamp of Sorrows 28.15,36.12
+turnin Eight-Legged Fillets##26917 |goto Swamp of Sorrows 28.15,36.12
+turnin A Real Kick##26918 |goto Swamp of Sorrows 28.15,36.12
+step
+talk Elder Ghast##11874
+turnin Skins of the Swamp##26920 |goto Swamp of Sorrows 26.97,40.45
+step
+talk Wanted Master##45876
+turnin Wanted: Spinnaret##26923 |goto Swamp of Sorrows 26.97,40.45
 step
 Kill Whelp enemies around this area
 |tip They look like tiny flying dragons.
@@ -13425,6 +13822,7 @@ talk Magistrate Henry Maleb##2276
 turnin Further Mysteries##525 |goto Hillsbrad Foothills 48.14,59.11
 accept Dark Council##537 |goto Hillsbrad Foothills 48.14,59.11
 accept Noble Deaths##512 |goto Hillsbrad Foothills 48.14,59.11
+accept Crushridge Bounty##500 |goto Hillsbrad Foothills 48.14,59.11
 turnin Assassin's Contract##522 |goto Hillsbrad Foothills 48.14,59.11 |only if itemcount(3668) == 1
 step
 talk Magistrate Henry Maleb##2276
@@ -14683,17 +15081,17 @@ step
 Enter the building |goto Stormwind City 41.16,63.63 < 10 |walk
 talk Mazen Mac'Nadir##338
 |tip Inside the building.
-accept Mazen's Behest##1363 |goto Stormwind City 41.52,64.38
+accept Mazen's Behest##1363 |goto Stormwind City 51.8,74.3
 step
 talk Acolyte Dellis##5386
 |tip Upstairs inside the building.
-turnin Mazen's Behest##1363 |goto Stormwind City 40.97,63.83
-accept Mazen's Behest##1364 |goto Stormwind City 40.97,63.83
+turnin Mazen's Behest##1363 |goto Stormwind City 51.4,73.8
+accept Mazen's Behest##1364 |goto Stormwind City 51.4,73.8
 step
 Run up the ramp and enter the building |goto Stormwind City 39.32,81.50 < 10 |only if walking
 talk High Sorcerer Andromath##5694
 |tip Upstairs inside the building.
-accept Vital Supplies##1477 |goto Stormwind City 37.52,81.67
+accept Vital Supplies##1477 |goto Stormwind City 48.7,87.6
 step
 talk Kebok##737
 |tip Upstairs inside the building, on the top floor.

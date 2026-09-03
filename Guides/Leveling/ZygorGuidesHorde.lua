@@ -8637,6 +8637,8 @@ ZygorGuidesViewer:RegisterGuide(
 step
 talk Tatternack Steelforge##3433
 accept A New Ore Sample##1153 |goto The Barrens 45.10,57.68
+accept Fresh Water Delivery##27492 |goto The Barrens 45.10,57.68
+|tip Do along the way.
 |tip This requires you to complete the prequest "Weapons of Choice" found in "The Barrens (24-26)" guide.
 step
 talk Brine##5899
@@ -11014,6 +11016,10 @@ step
 talk Nazeer Bloodpike##4791
 accept Theramore Spies##1201 |goto Dustwallow Marsh 35.21,30.66
 step
+click Wanted: Dragon Killers##250439
+accept Wanted: Dragon Killers##27282 |goto Dustwallow Marsh 34.9,43.7
+|tip This quest is in the southwest corner of Dustwallow Marsh.
+step
 click Hoofprints##21015
 accept Suspicious Hoofprints##1268 |goto Dustwallow Marsh 29.70,47.63
 |only if not hardcore
@@ -11026,6 +11032,12 @@ step
 click Black Shield##20992
 accept The Black Shield##1251 |goto Dustwallow Marsh 29.63,48.59
 |only if not hardcore
+step
+Follow the path to the southwest |goto Dustwallow Marsh 37.5,75.3 < 20 |walk
+talk Brogg##23579
+|tip He's in Brogg's Hollow in the southwest corner of Dustwallow Marsh.
+turnin Wanted: Dragon Killers##27282 |goto Dustwallow Marsh 37.5,75.3
+|tip This completes the initial objective of finding and talking to Brogg.
 step
 talk Krog##4926
 turnin Suspicious Hoofprints##1268 |goto Dustwallow Marsh 36.42,31.88
@@ -12234,10 +12246,10 @@ kill Noboru the Cudgel##5477
 collect Noboru's Cudgel##6196 |q 1392 |future
 step
 use Noboru's Cudgel##6196
-accept Noboru the Cudgel##1392	|goto Swamp of Sorrows 25.99,31.40
+accept Noboru the Cudgel##1392	|goto Swamp of Sorrows 25.82,31.79
 step
 talk Magtoor##1776
-accept Draenethyst Crystals##1389 |goto Swamp of Sorrows 25.99,31.40
+accept Draenethyst Crystals##1389 |goto Swamp of Sorrows 25.82,31.79
 step
 label "Collect_Unprepared_Sawtooth_Flanks"
 Kill Sawtooth enemies around this area
@@ -12306,8 +12318,8 @@ Visit the Vendor |vendor Hartash##981 |goto Swamp of Sorrows 45.67,50.92 |q 1116
 |only if Rogue and itemcount(2528) == 0
 step
 talk Magtoor##1776
-turnin Draenethyst Crystals##1389 |goto Swamp of Sorrows 25.99,31.40
-turnin Noboru the Cudgel##1392 |goto Swamp of Sorrows 25.99,31.40
+turnin Draenethyst Crystals##1389 |goto Swamp of Sorrows 25.82,31.79
+turnin Noboru the Cudgel##1392 |goto Swamp of Sorrows 25.82,31.79
 step
 Kill enemies around this area
 |tip We want to be level 41 to stay ahead of the level curve.
