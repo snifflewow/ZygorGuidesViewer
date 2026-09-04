@@ -1,6 +1,8 @@
 # VanillaEpochLeveling
 
 # PROJECT CURRENTLY IN STANDBY, WAITING FOR EPOCH UPDATES
+# Current focus is on alliance night elf 1-60. 
+# If you play horde and want to help please do
 
 ## Overview
 
