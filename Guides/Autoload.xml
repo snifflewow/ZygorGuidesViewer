@@ -4,42 +4,75 @@
 	<Script file="Images\Images.lua"/>
 
 	<!-- Autoloading of included guides. Add your Guide##.lua files here as you please. -->
-	
+
 	<!-- Alliance Leveling Guides -->
 	<Script file="Leveling\Alliance\01-15_HumanStarter.lua"/>
 	<Script file="Leveling\Alliance\01-13_DwarfGnomeStarter.lua"/>
 	<Script file="Leveling\Alliance\01-13_NightElfStarter.lua"/>
-	<Script file="Leveling\Alliance\13-22_Darkshore.lua"/>
+	<Script file="Leveling\Alliance\13-17_Darkshore.lua"/>
 	<Script file="Leveling\Alliance\17-18_LochModan.lua"/>
-	<Script file="Leveling\Alliance\18-28_RedridgeMountains.lua"/>
-	<Script file="Leveling\Alliance\22-30_Ashenvale.lua"/>
-	<Script file="Leveling\Alliance\23-29_StonetalonMountains.lua"/>
-	<Script file="Leveling\Alliance\24-31_Wetlands.lua"/>
-	<Script file="Leveling\Alliance\25-35_Duskwood.lua"/>
+	<Script file="Leveling\Alliance\18-20_RedridgeMountains.lua"/>
+	<Script file="Leveling\Alliance\20-22_Darkshore.lua"/>
+	<Script file="Leveling\Alliance\22-23_Ashenvale.lua"/>
+	<Script file="Leveling\Alliance\23-24_StonetalonMountains.lua"/>
+	<Script file="Leveling\Alliance\24-24_Ashenvale.lua"/>
+	<Script file="Leveling\Alliance\24-25_Wetlands.lua"/>
+	<Script file="Leveling\Alliance\25-27_Duskwood.lua"/>
+	<Script file="Leveling\Alliance\27-28_RedridgeMountains.lua"/>
+	<Script file="Leveling\Alliance\28-29_Wetlands.lua"/>
+	<Script file="Leveling\Alliance\29-29_StonetalonMountains.lua"/>
+	<Script file="Leveling\Alliance\29-30_Ashenvale.lua"/>
+	<Script file="Leveling\Alliance\30-31_Wetlands.lua"/>
+	<Script file="Leveling\Alliance\31-32_Duskwood.lua"/>
+	<Script file="Leveling\Alliance\32-32_StranglethornVale.lua"/>
 	<Script file="Leveling\Alliance\32-33_HillsbradFoothills.lua"/>
-	<Script file="Leveling\Alliance\32-45_StranglethornVale.lua"/>
+	<Script file="Leveling\Alliance\33-33_ArathiHighlands.lua"/>
+	<Script file="Leveling\Alliance\33-33_DustwallowMarsh.lua"/>
 	<Script file="Leveling\Alliance\33-34_ThousandNeedles.lua"/>
-	<Script file="Leveling\Alliance\33-40_ArathiHighlands.lua"/>
-	<Script file="Leveling\Alliance\33-40_DustwallowMarsh.lua"/>
-	<Script file="Leveling\Alliance\35-41_Desolace.lua"/>
-	<Script file="Leveling\Alliance\38-43_SwampofSorrows.lua"/>
+	<Script file="Leveling\Alliance\34-34_DustwallowMarsh.lua"/>
+	<Script file="Leveling\Alliance\34-35_StranglethornVale.lua"/>
+	<Script file="Leveling\Alliance\35-35_Duskwood.lua"/>
+	<Script file="Leveling\Alliance\35-37_Desolace.lua"/>
+	<Script file="Leveling\Alliance\37-38_StranglethornVale.lua"/>
+	<Script file="Leveling\Alliance\38-39_SwampofSorrows.lua"/>
 	<Script file="Leveling\Alliance\39-39_AlteracMountains.lua"/>
+	<Script file="Leveling\Alliance\39-40_ArathiHighlands.lua"/>
+	<Script file="Leveling\Alliance\40-40_DustwallowMarsh.lua"/>
+	<Script file="Leveling\Alliance\40-41_Desolace.lua"/>
 	<Script file="Leveling\Alliance\41-42_Badlands.lua"/>
-	<Script file="Leveling\Alliance\43-50_Tanaris.lua"/>
-	<Script file="Leveling\Alliance\45-53_Feralas.lua"/>
+	<Script file="Leveling\Alliance\42-43_StranglethornVale.lua"/>
+	<Script file="Leveling\Alliance\43-43_SwampofSorrows.lua"/>
+	<Script file="Leveling\Alliance\43-44_Tanaris.lua"/>
+	<Script file="Leveling\Alliance\44-45_StranglethornVale.lua"/>
+	<Script file="Leveling\Alliance\45-48_Feralas.lua"/>
+	<Script file="Leveling\Alliance\48-49_Tanaris.lua"/>
 	<Script file="Leveling\Alliance\49-50_TheHinterlands.lua"/>
+	<Script file="Leveling\Alliance\50-50_Tanaris.lua"/>
+	<Script file="Leveling\Alliance\50-50_UnGoroCrater.lua"/>
 	<Script file="Leveling\Alliance\50-51_SearingGorge.lua"/>
-	<Script file="Leveling\Alliance\50-55_UnGoroCrater.lua"/>
 	<Script file="Leveling\Alliance\51-51_BlastedLands.lua"/>
-	<Script file="Leveling\Alliance\51-59_Plaguelands.lua"/>
-	<Script file="Leveling\Alliance\52-54_Azshara.lua"/>
-	<Script file="Leveling\Alliance\52-55_Felwood.lua"/>
-	<Script file="Leveling\Alliance\52-59_Winterspring.lua"/>
+	<Script file="Leveling\Alliance\51-52_WesternPlaguelands.lua"/>
+	<Script file="Leveling\Alliance\52-52_Azshara.lua"/>
+	<Script file="Leveling\Alliance\52-52_Felwood.lua"/>
+	<Script file="Leveling\Alliance\52-52_Winterspring.lua"/>
+	<Script file="Leveling\Alliance\52-53_FelwoodPart1.lua"/>
+	<Script file="Leveling\Alliance\53-53_Feralas.lua"/>
+	<Script file="Leveling\Alliance\53-54_Azshara.lua"/>
+	<Script file="Leveling\Alliance\54-55_UnGoroCrater.lua"/>
+	<Script file="Leveling\Alliance\55-55_FelwoodPart2.lua"/>
+	<Script file="Leveling\Alliance\55-55_FelwoodPart3.lua"/>
+	<Script file="Leveling\Alliance\55-55_Winterspring.lua"/>
+	<Script file="Leveling\Alliance\55-56_Winterspring.lua"/>
+	<Script file="Leveling\Alliance\56-56_WesternPlaguelands.lua"/>
 	<Script file="Leveling\Alliance\56-57_BurningSteppes.lua"/>
+	<Script file="Leveling\Alliance\57-57_WesternPlaguelands.lua"/>
+	<Script file="Leveling\Alliance\57-58_EasternPlaguelands.lua"/>
+	<Script file="Leveling\Alliance\58-59_WesternPlaguelands.lua"/>
+	<Script file="Leveling\Alliance\59-59_Winterspring.lua"/>
 	<Script file="Leveling\Alliance\ClassQuests.lua"/>
 	<Script file="Leveling\Alliance\ExtraZones_Westfall.lua"/>
 	<!-- <Script file="Leveling\ZygorGuidesHorde.lua"/> -->
 
-	
+
 
 </Ui>
