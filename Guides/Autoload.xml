@@ -6,18 +6,18 @@
 	<!-- Autoloading of included guides. Add your Guide##.lua files here as you please. -->
 	
 	<Script file="Leveling\ZygorGuidesAlliance.lua"/>
-	<Script file="Leveling\ZygorGuidesHorde.lua"/>
+	<!-- <Script file="Leveling\ZygorGuidesHorde.lua"/> -->
 
 	<!-- PROFESSIONS -->
 		<!-- CLASSIC -->
-		<Script file="Professions\ZygorProfessionsCommonCLASSIC.lua"/>
-		<Script file="Professions\ZygorProfessionsAllianceCLASSIC.lua"/>
-		<Script file="Professions\ZygorProfessionsHordeCLASSIC.lua"/>
+		<!-- <Script file="Professions\ZygorProfessionsCommonCLASSIC.lua"/> -->
+		<!-- <Script file="Professions\ZygorProfessionsAllianceCLASSIC.lua"/> -->
+		<!-- <Script file="Professions\ZygorProfessionsHordeCLASSIC.lua"/> -->
 
 	<!-- DUNGEONS -->
 		<!-- CLASSIC -->
-		<Script file="Dungeons\ZygorDungeonAllianceCLASSIC.lua"/>
-		<Script file="Dungeons\ZygorDungeonHordeCLASSIC.lua"/>
+		<!-- <Script file="Dungeons\ZygorDungeonAllianceCLASSIC.lua"/> -->
+		<!-- <Script file="Dungeons\ZygorDungeonHordeCLASSIC.lua"/> -->
 	
 
 </Ui>
