@@ -25,16 +25,42 @@ Either :
 
 ## Custom content status tracker
 
-Alliance (empty rows mean no updates yet) :
+Alliance guides live in `Guides/Leveling/Alliance/`, split by zone. Empty status means no Epoch-specific updates yet.
 
-| Guide | Status |
-|-----------|--------|
-| ZygorGuidesAllianceClassQuests | |
-| ZygorGuidesAllianceStarters | |
-| ZygorGuidesAllianceZones13-30 | |
-| ZygorGuidesAllianceZones30-40 | |
-| ZygorGuidesAllianceZones40-52 | |
-| ZygorGuidesAllianceZones52-59 | |
+| File | Zone | Status |
+|------|------|--------|
+| `01-15_HumanStarter.lua` | Human Starter (1-15) | |
+| `01-13_DwarfGnomeStarter.lua` | Dwarf & Gnome Starter (1-13) | |
+| `01-13_NightElfStarter.lua` | Night Elf Starter (1-13) | |
+| `13-22_Darkshore.lua` | Darkshore (13-22) | |
+| `17-18_LochModan.lua` | Loch Modan (17-18) | |
+| `18-28_RedridgeMountains.lua` | Redridge Mountains (18-28) | |
+| `22-30_Ashenvale.lua` | Ashenvale (22-30) | Updated for Epoch |
+| `23-29_StonetalonMountains.lua` | Stonetalon Mountains (23-29) | |
+| `24-31_Wetlands.lua` | Wetlands (24-31) | |
+| `25-35_Duskwood.lua` | Duskwood (25-35) | |
+| `32-33_HillsbradFoothills.lua` | Hillsbrad Foothills (32-33) | |
+| `32-45_StranglethornVale.lua` | Stranglethorn Vale (32-45) | |
+| `33-34_ThousandNeedles.lua` | Thousand Needles (33-34) | |
+| `33-40_ArathiHighlands.lua` | Arathi Highlands (33-40) | |
+| `33-40_DustwallowMarsh.lua` | Dustwallow Marsh (33-40) | |
+| `35-41_Desolace.lua` | Desolace (35-41) | |
+| `38-43_SwampofSorrows.lua` | Swamp of Sorrows (38-43) | |
+| `39-39_AlteracMountains.lua` | Alterac Mountains (39-39) | |
+| `41-42_Badlands.lua` | Badlands (41-42) | |
+| `43-50_Tanaris.lua` | Tanaris (43-50) | |
+| `45-53_Feralas.lua` | Feralas (45-53) | Updated for Epoch |
+| `49-50_TheHinterlands.lua` | The Hinterlands (49-50) | |
+| `50-51_SearingGorge.lua` | Searing Gorge (50-51) | |
+| `50-55_UnGoroCrater.lua` | Un'Goro Crater (50-55) | |
+| `51-51_BlastedLands.lua` | Blasted Lands (51-51) | |
+| `51-59_Plaguelands.lua` | Western & Eastern Plaguelands (51-59) | |
+| `52-54_Azshara.lua` | Azshara (52-54) | |
+| `52-55_Felwood.lua` | Felwood (52-55) |  |
+| `52-59_Winterspring.lua` | Winterspring (52-59) | |
+| `56-57_BurningSteppes.lua` | Burning Steppes (56-57) | |
+| `ClassQuests.lua` | All class quests | |
+| `ExtraZones_Westfall.lua` | Westfall (extra) | |
 
 Horde :
 

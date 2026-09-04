@@ -5,7 +5,6 @@ end
 if UnitFactionGroup('player') ~= 'Alliance' then
   return
 end
-
 ZygorGuidesViewer:RegisterGuide(
   'Leveling Guides\\Class Quests\\Druid',
   {
