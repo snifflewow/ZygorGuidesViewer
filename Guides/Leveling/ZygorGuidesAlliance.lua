@@ -950,7 +950,7 @@ accept Westfall Stew##36 |goto Westfall 59.92,19.42
 accept Poor Old Blanchy##151 |goto Westfall 59.92,19.42
 step
 talk Farmer Saldean##233
-accept The Killing Fields##9 |goto Westfall 56.05,31.22
+accept The Killing Fields##26993 |goto Westfall 56.05,31.22
 step
 Enter the building |goto Westfall 56.15,31.04 < 10 |walk
 talk Salma Saldean##235
@@ -2090,7 +2090,7 @@ talk Salma Saldean##235
 turnin Westfall Stew##38 |goto Westfall 56.42,30.52
 step
 label "Kill_Harvest_Watchers"
-kill 20 Harvest Watcher##114 |q 9/1 |goto Westfall 53.89,32.26
+kill 10 Rusty Harvest Golem##114 |q 26993/1 |goto Westfall 53.89,32.26
 You can find more around [51.03,22.94]
 step
 Kill enemies around this area
@@ -2099,9 +2099,11 @@ ding 14,11900 |goto Westfall 53.89,32.26
 You can find more around [51.03,22.94]
 step
 talk Farmer Saldean##233
-turnin The Killing Fields##9 |goto Westfall 56.04,31.23
-Sell your junk here as well |vendor Farmer Saldean##233 |goto Westfall 56.04,31.23
-|only if readyq(9)
+turnin The Killing Fields##26993 |goto Westfall 56.04,31.23
+accept The Killing Fields##26994 |goto Westfall 56.04,31.23
+step
+talk Farmer Furlbrow##237
+turnin The Killing Fields##26994 |goto Westfall 59.92,19.42
 step
 talk Captain Danuvin##821
 turnin Patrolling Westfall##102 |goto Westfall 56.42,47.62
@@ -2343,7 +2345,6 @@ Enter the building |goto Dun Morogh 28.79,69.05 < 10 |walk
 talk Felix Whindlebolt##8416
 |tip He walks around this area inside the building.
 |tip Hurry, you have a timed quest.
-accept A Refugee's Quandary##3361 |goto Dun Morogh 28.51,67.67
 step
 talk Durnan Furcutter##836
 |tip Inside the building.
@@ -2412,8 +2413,7 @@ talk Nori Pridedrift##12738
 turnin Bring Back the Mug##3365 |goto Dun Morogh 24.98,75.96
 step
 talk Grelin Whitebeard##786
-accept The Troll Cave##182 |goto Dun Morogh 25.08,75.71
-stickystart "Kill_Frostmane_Troll_Whelps"
+accept The Stolen Journal##218 |goto Dun Morogh 25.08,75.71
 step
 Enter the cave |goto Dun Morogh 26.78,79.83 < 15 |walk
 Follow the path |goto Dun Morogh 28.00,81.05 < 10 |walk
@@ -2446,32 +2446,8 @@ buy Grimoire of Blood Pact (Rank 1)##16321 |n
 use the Grimoire of Blood Pact (Rank 1)##16321
 Teach Your Imp Blood Pact (Rank 1) |learnpetspell Blood Pact##6307 |goto Dun Morogh 28.80,66.16
 |only if Gnome Warlock
-stickystart "Kill_Frostmane_Troll_Whelps"
 step
 Leave the building |goto Dun Morogh 28.79,69.05 < 10 |walk |only if subzone("Anvilmar")
-click Felix's Box
-collect Felix's Box##10438 |q 3361/1 |goto Dun Morogh 20.88,76.07
-|tip Grind enemies between each of Felix's parts to reduce a grind later.
-step
-click Felix's Chest
-collect Felix's Chest##16313 |q 3361/2 |goto Dun Morogh 22.78,80.00
-|tip Grind enemies between each of Felix's parts to reduce a grind later.
-step
-click Felix's Bucket of Bolts
-collect Felix's Bucket of Bolts##16314 |q 3361/3 |goto Dun Morogh 26.33,79.27
-|tip Grind enemies between each of Felix's parts to reduce a grind later.
-step
-label "Kill_Frostmane_Troll_Whelps"
-kill 14 Frostmane Troll Whelp##706 |q 182/1 |goto Dun Morogh 26.78,79.83
-|tip Inside and outside the cave. |notinsticky
-You can find more outside the cave around: |notinsticky
-[Dun Morogh 22.78,79.72]
-[Dun Morogh 21.02,76.15]
-step
-Leave the cave |goto Dun Morogh 26.78,79.83 < 15 |walk |only if subzone("Coldridge Valley") and _G.IsIndoors()
-talk Grelin Whitebeard##786
-turnin The Troll Cave##182 |goto Dun Morogh 25.08,75.71
-accept The Stolen Journal##218 |goto Dun Morogh 25.08,75.71
 step
 Enter the cave |goto Dun Morogh 26.80,79.86 < 15 |walk
 Follow the path |goto Dun Morogh 27.73,80.71 < 10 |walk
@@ -2497,23 +2473,6 @@ step
 Grind enemies until you have 4 Silver |complete _G.GetMoney() >= 4 |goto Dun Morogh 26.78,79.83
 |tip We will use this to buy a big weapon upgrade after leaving the starting zone.
 |only if Dwarf Hunter
-step
-Allow Enemies to Kill You
-|tip Since you are less than level 11, you will not receive resurrection sickness when you revive.
-|tip This basically makes dying have no real penalty at this level.
-|tip This will allow you to travel a long distance quickly.
-Die on Purpose |complete isdead |goto Dun Morogh 26.78,79.83 |q 3361
-|only if not hardcore
-step
-talk Spirit Healer##6491
-Select _"Return me to life."_
-Resurrect at the Spirit Healer |complete not isdead |goto Dun Morogh 29.55,69.83 |q 3361 |zombiewalk
-|only if not hardcore
-step
-Enter the building |goto Dun Morogh 28.79,69.05 < 10 |walk
-talk Felix Whindlebolt##8416
-|tip He walks around this area inside the building.
-turnin A Refugee's Quandary##3361 |goto Dun Morogh 28.55,67.65
 step
 Leave the building |goto Dun Morogh 28.79,69.05 < 10 |walk |only if subzone("Anvilmar")
 talk Mountaineer Thalos##1965
@@ -8043,9 +8002,6 @@ step
 talk Shindrell Swiftfire##3845
 accept The Zoram Strand##1008 |goto Ashenvale 34.67,48.84
 step
-talk Sentinel Thenysil##4079
-accept On Guard in Stonetalon##1070 |goto Ashenvale 34.89,49.79
-step
 talk Faldreas Goeth'Shael##3996
 accept Journey to Stonetalon Peak##1056 |goto Ashenvale 35.77,49.10
 step
@@ -8237,9 +8193,7 @@ accept Super Reaper 6000##1093 |goto Stonetalon Mountains 58.99,62.60
 step
 Follow the path up around the cliff |goto Stonetalon Mountains 60.06,70.00 < 40 |only if walking
 talk Kaela Shadowspear##4080
-turnin On Guard in Stonetalon##1070 |goto Stonetalon Mountains 59.90,66.85
 accept On Guard in Stonetalon##1085 |goto Stonetalon Mountains 59.90,66.85
-|tip This requires a questchain that starts in the "Ashenvale (22-23)" guide.
 step
 talk Gaxim Rustfizzle##4077
 turnin On Guard in Stonetalon##1085 |goto Stonetalon Mountains 59.52,67.15
@@ -13854,10 +13808,10 @@ click Worn Wooden Chest##1765
 |tip Inside the building.
 |tip Try not to linger while inside the building.	|only if hardcore
 |tip Enemies tend to respawn quickly around here.	|only if hardcore
-collect Ensorcelled Parchment##3706 |goto Alterac Mountains 39.18,14.66 |q 551 |future
+collect Ensorcelled Parchment##3706 |goto Alterac Mountains 39.18,14.66 |q 26518 |future
 step
 use the Ensorcelled Parchment##3706
-accept The Ensorcelled Parchment##551
+accept The Ensorcelled Parchment##26518
 |only if itemcount(3706) > 0
 stickystart "Collect_Alterac_Signet_Rings"
 stickystart "Kill_Baron_ATM"
@@ -13951,7 +13905,7 @@ turnin Noble Deaths##512 |goto Hillsbrad Foothills 48.14,59.11
 step
 Leave the building |goto Hillsbrad Foothills 49.01,59.12 < 10 |walk |only if subzone("Southshore Town Hall")
 talk Loremaster Dibbs##2277
-turnin The Ensorcelled Parchment##551 |goto Hillsbrad Foothills 50.57,57.09
+turnin The Ensorcelled Parchment##26518 |goto Hillsbrad Foothills 50.57,57.09
 accept Stormpike's Deciphering##554 |goto Hillsbrad Foothills 50.57,57.09
 step
 Enter the building |goto Tirisfal Glades/0 82.65,32.88 < 7 |walk
@@ -18688,7 +18642,7 @@ step
 talk Arathandris Silversky##9528
 |tip She walks around this area.
 Select _"I need a Cenarion beacon."_
-collect Cenarion Beacon##11511 |goto Felwood 54.15,86.83 |q 5882 |future
+collect Cenarion Beacon##11511 |goto Felwood 54.15,86.83
 step
 Follow the road south to Emerald Sanctuary |goto Felwood 60.92,15.98 < 50 |only if walking and subzone("Talonbranch Glade")
 talk Greta Mosshoof##10922
@@ -18712,7 +18666,7 @@ Kill enemies around this area
 |tip Watch for enemies grouped at the camps here as they may pull in groups.	|only if hardcore
 |tip Deadwood Gardeners may reduce the healing on you.				|only if hardcore
 |tip Deadwood Pathfinders are ranged attackers.					|only if hardcore
-collect 6 Corrupted Soul Shard##11515 |goto Felwood 48.32,92.99 |q 5882 |future
+collect 6 Corrupted Soul Shard##11515 |goto Felwood 48.32,92.99
 You can find more around: |notinsticky
 [46.51,88.13]
 [48.77,89.62]
@@ -18723,7 +18677,7 @@ Kill enemies around this area
 |tip Watch for enemies grouped at the camps here as they may pull in groups.	|only if hardcore
 |tip Deadwood Gardeners may reduce the healing on you.				|only if hardcore
 |tip Deadwood Pathfinders are ranged attackers.					|only if hardcore
-ding 53 |goto Felwood 48.32,92.99 |q 5882 |future
+ding 53 |goto Felwood 48.32,92.99
 You can find more around: |notinsticky
 [46.51,88.13]
 [48.77,89.62]
@@ -18739,7 +18693,6 @@ talk Arathandris Silversky##9528
 |tip This will award you with Cenarion Plant Salve.
 |tip You can use these to cleanse 'Corrupted Songflower' around the zone for a large buff.
 |tip It is heavily recommended to cleanse one anytime you see it.
-accept Salve via Hunting##5882 |goto Felwood 54.15,86.83 |instant
 ]]
 )
 ZygorGuidesViewer:RegisterGuide(
@@ -18816,7 +18769,7 @@ _Destroy This Item:_
 trash Zorbin's Ultra-Shrinker##18904 |goto Feralas 47.18,44.52
 step
 Follow the road |goto Feralas 47.18,44.52 < 30 |only if walking and subzone("The Forgotten Coast")
-Discover Dire Maul |goto Feralas 59.12,44.62 < 20 |q 5527 |future
+Discover Dire Maul |goto Feralas 59.12,44.62 < 20
 |tip Run slightly onto the huge ramp to discover the Dire Maul dungeon.
 |tip As soon as you reach the ramp and discover Dire Maul, run away from the ogres and go back to the road.
 |tip You need to discover the Dire Maul dungeon to be able to accept a quest later in the guide.
@@ -19376,11 +19329,6 @@ path	54.88,74.47		57.42,82.41		67.68,57.45		62.02,52.75
 path	61.79,40.59		43.80,41.10		36.79,14.21		39.17,20.89
 path	49.77,18.95		52.37,18.62		54.33,10.03		57.70,7.66
 path	65.06,16.66		60.60,22.94		61.80,32.53		61.54,40.48
-talk Herald Moonstalker##10878
-|tip She looks like a night elf that walks in a large path around Darnassus.
-|tip She walks clockwise, so run counter clockwise to find her faster.
-accept The New Frontier##1047
-step
 Enter the building |goto Darnassus 39.04,76.76 < 15 |walk
 use Eridan's Vial##11682
 |tip Inside the building.
@@ -19390,8 +19338,6 @@ Leave the building |goto Darnassus 39.04,76.76 < 15 |walk |only if subzone("Temp
 Enter the building |goto Darnassus 35.52,10.70 < 10 |walk
 talk Arch Druid Fandral Staghelm##3516
 |tip He walks around inside the building, at the top.
-turnin The New Frontier##1047 |goto Darnassus 34.82,9.25
-accept The New Frontier##6761 |goto Darnassus 34.82,9.25
 accept Un'Goro Soil##3764 |goto Darnassus 34.82,9.25
 step
 talk Jenal##9047
@@ -19405,7 +19351,6 @@ step
 Enter the building |goto Darnassus 35.52,10.70 < 10 |walk
 talk Mathrengyl Bearwalker##4217
 |tip Upstairs inside the building, on the middle floor.
-turnin The New Frontier##6761 |goto Darnassus 35.38,8.40
 accept Rabine Saturna##6762 |goto Darnassus 35.38,8.40
 step
 talk Arch Druid Fandral Staghelm##3516
@@ -20486,9 +20431,6 @@ ZygorGuidesViewer:RegisterGuide(
   },
   [[
 step
-talk Cenarion Emissary Jademoon##15187
-accept Taking Back Silithus##8275 |goto Ironforge 58.54,47.32
-step
 talk Tynnus Venomsprout##5169
 |tip Stock up on poisons.
 |tip Open your poison crafting window and purchase the ingredients you need.
@@ -21245,10 +21187,6 @@ accept Wasteland##1124 |goto Moonglade 51.68,45.09
 step
 talk Rabine Saturna##11801
 |tip Inside the building.
-Select _"Have you ever heard of a place called Dire Maul?"_
-Watch the Dialogue
-accept A Reliquary of Purity##5527 |goto Moonglade 51.68,45.09
-|tip If you didn't discover the Dire Maul dungeon earlier in the guide, you won't be able to accept this quest.
 step
 talk Auctioneer Golothas##8723
 |tip Inside the building.
@@ -21331,7 +21269,6 @@ turnin Wasteland##1124 |goto Silithus 81.87,18.93
 accept The Spirits of Southwind##1125 |goto Silithus 81.87,18.93
 step
 talk Windcaller Proudhorn##15191
-turnin Taking Back Silithus##8275 |goto Silithus 51.15,38.29
 accept Securing the Supply Lines##8280 |goto Silithus 51.15,38.29
 step
 talk Beetix Ficklespragg##15189
@@ -21353,12 +21290,6 @@ Follow the path up |goto Silithus 50.57,35.93 < 10 |only if walking
 talk Cloud Skydancer##15177
 fpath Cenarion Hold |goto Silithus 50.58,34.45
 step
-Enter the building |goto Silithus 63.45,54.09 < 10 |walk
-click Dusty Reliquary
-|tip Inside the building.
-|tip The 'Tortured' enemies around here will summon Hive'Ashi Drones.	|only if hardcore
-|tip Watch for respawns while in the area.				|only if hardcore
-collect Reliquary of Purity##22201 |q 5527/1 |goto Silithus 63.23,55.35
 stickystart "Kill_Tortured_Druids"
 stickystart "Kill_Tortured_Sentinels"
 step
@@ -21597,7 +21528,6 @@ step
 Enter the building |goto Moonglade 51.47,41.44 < 10 |walk
 talk Rabine Saturna##11801
 |tip Inside the building.
-turnin A Reliquary of Purity##5527 |goto Moonglade 51.68,45.08
 turnin Uncovering Past Secrets##6845 |goto Moonglade 51.68,45.08
 step
 talk Umber##11939
@@ -24549,7 +24479,7 @@ accept Poor Old Blanchy##151 |goto Westfall 59.92,19.42
 stickystart "Collect_Handfuls_Of_Oats"
 step
 talk Farmer Saldean##233
-accept The Killing Fields##9 |goto Westfall 56.04,31.23
+accept The Killing Fields##26993 |goto Westfall 56.04,31.23
 step
 Enter the building |goto Westfall 56.15,31.04 < 7 |walk
 talk Salma Saldean##235
@@ -24710,11 +24640,15 @@ collect 5 Flask of Oil##814 |goto Westfall 53.89,32.26 |q 103 |future
 You can find more around [51.03,22.94]
 step
 label "Kill_Harvest_Watchers"
-kill 20 Harvest Watcher##114 |q 9/1 |goto Westfall 53.89,32.26
+kill 10 Rusty Harvest Golem##114 |q 26993/1 |goto Westfall 53.89,32.26
 You can find more around [51.03,22.94]
 step
 talk Farmer Saldean##233
-turnin The Killing Fields##9 |goto Westfall 56.04,31.23
+turnin The Killing Fields##26993 |goto Westfall 56.04,31.23
+accept The Killing Fields##26994 |goto Westfall 56.04,31.23
+step
+talk Farmer Furlbrow##237
+turnin The Killing Fields##26994 |goto Westfall 59.92,19.42
 step
 Enter the building |goto Westfall 56.15,31.05 < 7 |walk
 talk Salma Saldean##235
