@@ -5,7 +5,12 @@
 
 	<!-- Autoloading of included guides. Add your Guide##.lua files here as you please. -->
 	
-	<Script file="Leveling\ZygorGuidesAlliance.lua"/>
+	<Script file="Leveling\ZygorGuidesAllianceStarters.lua"/>
+	<Script file="Leveling\ZygorGuidesAllianceZones13-30.lua"/>
+	<Script file="Leveling\ZygorGuidesAllianceZones30-40.lua"/>
+	<Script file="Leveling\ZygorGuidesAllianceZones40-52.lua"/>
+	<Script file="Leveling\ZygorGuidesAllianceZones52-59.lua"/>
+	<Script file="Leveling\ZygorGuidesAllianceClassQuests.lua"/>
 	<!-- <Script file="Leveling\ZygorGuidesHorde.lua"/> -->
 
 	<!-- PROFESSIONS -->
