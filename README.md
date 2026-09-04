@@ -35,7 +35,7 @@ Alliance guides live in `Guides/Leveling/Alliance/`, split by zone. Empty status
 | `13-22_Darkshore.lua` | Darkshore (13-22) | |
 | `17-18_LochModan.lua` | Loch Modan (17-18) | |
 | `18-28_RedridgeMountains.lua` | Redridge Mountains (18-28) | |
-| `22-30_Ashenvale.lua` | Ashenvale (22-30) | Updated for Epoch |
+| `22-30_Ashenvale.lua` | Ashenvale (22-30) | |
 | `23-29_StonetalonMountains.lua` | Stonetalon Mountains (23-29) | |
 | `24-31_Wetlands.lua` | Wetlands (24-31) | |
 | `25-35_Duskwood.lua` | Duskwood (25-35) | |
@@ -49,7 +49,7 @@ Alliance guides live in `Guides/Leveling/Alliance/`, split by zone. Empty status
 | `39-39_AlteracMountains.lua` | Alterac Mountains (39-39) | |
 | `41-42_Badlands.lua` | Badlands (41-42) | |
 | `43-50_Tanaris.lua` | Tanaris (43-50) | |
-| `45-53_Feralas.lua` | Feralas (45-53) | Updated for Epoch |
+| `45-53_Feralas.lua` | Feralas (45-53) |  |
 | `49-50_TheHinterlands.lua` | The Hinterlands (49-50) | |
 | `50-51_SearingGorge.lua` | Searing Gorge (50-51) | |
 | `50-55_UnGoroCrater.lua` | Un'Goro Crater (50-55) | |
