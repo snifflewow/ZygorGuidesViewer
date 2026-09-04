@@ -13,16 +13,6 @@
 	<Script file="Leveling\ZygorGuidesAllianceClassQuests.lua"/>
 	<!-- <Script file="Leveling\ZygorGuidesHorde.lua"/> -->
 
-	<!-- PROFESSIONS -->
-		<!-- CLASSIC -->
-		<!-- <Script file="Professions\ZygorProfessionsCommonCLASSIC.lua"/> -->
-		<!-- <Script file="Professions\ZygorProfessionsAllianceCLASSIC.lua"/> -->
-		<!-- <Script file="Professions\ZygorProfessionsHordeCLASSIC.lua"/> -->
-
-	<!-- DUNGEONS -->
-		<!-- CLASSIC -->
-		<!-- <Script file="Dungeons\ZygorDungeonAllianceCLASSIC.lua"/> -->
-		<!-- <Script file="Dungeons\ZygorDungeonHordeCLASSIC.lua"/> -->
 	
 
 </Ui>
