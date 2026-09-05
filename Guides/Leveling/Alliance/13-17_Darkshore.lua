@@ -112,7 +112,7 @@ stickystop "Collect_Thresher_Eyes"
 step
 talk Isabetta Wheeland##46067
 |tip At her home on an island south of Auberdine.
-complete My Sister Isabetta |q 27205/1 |goto Darkshore 32.00,64.00
+'complete My Sister Isabetta |q 27205/1 |goto Darkshore 32.00,64.00
 step
 talk Isabetta Wheeland##46067
 turnin My Sister Isabetta##27205 |goto Darkshore 32.00,64.00
@@ -384,7 +384,7 @@ step
 Travel to Blackwood Den in southern Darkshore |goto Darkshore 35.50,79.00
 kill Grizzletooth##45041
 |tip This bear is at Blackwood Den, near the Ashenvale border.
-complete Wanted: Grizzletooth |q 26208/1 |goto Darkshore 35.50,79.00
+'complete Wanted: Grizzletooth |q 26208/1 |goto Darkshore 35.50,79.00
 stickystart "Kill_Blackwood_Windtalkers"
 step
 kill 8 Blackwood Pathfinder##2167 |q 985/1 |goto Darkshore/0 39.93,56.19

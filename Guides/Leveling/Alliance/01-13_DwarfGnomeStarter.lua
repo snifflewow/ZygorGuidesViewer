@@ -6,7 +6,7 @@ if UnitFactionGroup('player') ~= 'Alliance' then
   return
 end
 ZygorGuidesViewer:RegisterGuide(
-  'Leveling Guides\\Dwarf & Gnome Starter (1-13)',
+  'Leveling Guides\\Dwarf and Gnome Starter (1-13)',
   {
     image = ZGV.IMAGESDIR .. 'Dun Morogh',
     condition_suggested = function()
@@ -28,6 +28,8 @@ Save All Linen Cloth You Find
 |tip You will need ~70 Linen Cloth when you are level 10-11.
 |tip You will use them to create your wand, which will be a powerful weapon for you.
 |tip However, if you are confident you will be able to buy a wand from the Auction House (if this isn't a new or populated server), you can ignore this. |only if not selfmade
+step
+step
 Click Here to Continue |confirm |q 364 |future
 |only if Priest
 step

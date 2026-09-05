@@ -61,7 +61,7 @@ step
 talk Aquamentus##45547
 accept An Audience With Water##26550 |goto Arathi Highlands 89.4,35.2
 step
-complete An Audience With Water |q 26550/1 |goto Arathi Highlands 89.4,35.2
+'complete An Audience With Water |q 26550/1 |goto Arathi Highlands 89.4,35.2
 |tip Speaking with Aquamentus completes the objective.
 step
 kill Coal Elementals

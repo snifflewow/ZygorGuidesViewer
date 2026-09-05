@@ -6,8 +6,8 @@
 	<!-- Autoloading of included guides. Add your Guide##.lua files here as you please. -->
 
 	<!-- Alliance Leveling Guides -->
-	<Script file="Leveling\Alliance\01-15_HumanStarter.lua"/>
-	<Script file="Leveling\Alliance\01-13_DwarfGnomeStarter.lua"/>
+	<!-- <Script file="Leveling\Alliance\01-15_HumanStarter.lua"/> -->
+	<!-- <Script file="Leveling\Alliance\01-13_DwarfGnomeStarter.lua"/> -->
 	<Script file="Leveling\Alliance\01-13_NightElfStarter.lua"/>
 	<Script file="Leveling\Alliance\13-17_Darkshore.lua"/>
 	<Script file="Leveling\Alliance\17-18_LochModan.lua"/>

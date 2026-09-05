@@ -28,6 +28,7 @@ Save All Linen Cloth You Find
 |tip You will need ~70 Linen Cloth when you are level 10-11.
 |tip You will use them to create your wand, which will be a powerful weapon for you.
 |tip However, if you are confident you will be able to buy a wand from the Auction House (if this isn't a new or populated server), you can ignore this. |only if not selfmade
+step
 Click Here to Continue |confirm |q 456 |future
 |only if Priest
 step
@@ -39,11 +40,8 @@ trash Hearthstone##6948 |goto Teldrassil 58.69,44.27
 step
 talk Conservator Ilthalaine##2079
 accept The Balance of Nature##456 |goto Teldrassil 58.69,44.27
-stickystart "Kill_Young_Thistle_Boars"
 step
 kill 7 Young Nightsaber##2031 |q 456/1 |goto Teldrassil 61.93,42.02
-step
-label "Kill_Young_Thistle_Boars"
 kill 4 Young Thistle Boar##1984 |q 456/2 |goto Teldrassil 61.93,42.02
 step
 Grind mobs here until you reach level 3.
@@ -85,6 +83,13 @@ talk Shanda##3595
 turnin Hallowed Sigil##3119 |goto Teldrassil 59.17,40.44
 |only if NightElf Priest
 step
+talk Tarindrella##1992
+turnin The Woodland Protector##458 |goto Teldrassil 57.83,45.20
+accept The Woodland Protector##459 |goto Teldrassil 57.83,45.20
+step
+talk Gilshalan Windwalker##2082
+accept Webwood Venom##916 |goto Teldrassil 57.81,41.65
+step
 Run up the large ramp |goto Teldrassil 57.53,41.63 < 15 |only if walking
 Enter the building |goto Teldrassil 58.51,40.71 < 10 |walk
 talk Mardant Strongoak##3597
@@ -93,20 +98,8 @@ talk Mardant Strongoak##3597
 turnin Verdant Sigil##3120 |goto Teldrassil 58.63,40.29
 |only if NightElf Druid
 step
-talk Tarindrella##1992
-turnin The Woodland Protector##458 |goto Teldrassil 57.83,45.20
-accept The Woodland Protector##459 |goto Teldrassil 57.83,45.20
-step
-talk Gilshalan Windwalker##2082
-accept Webwood Venom##916 |goto Teldrassil 57.81,41.65
-stickystart "Kill_Mangy_Nightsabers"
-stickystart "Kill_Thistle_Boars"
-step
-label "Kill_Mangy_Nightsabers"
 kill 7 Mangy Nightsaber##2032 |q 457/1 |goto Teldrassil 60.12,35.06
 You can find more around [62.60,37.94]
-step
-label "Kill_Thistle_Boars"
 kill 7 Thistle Boar##1985 |q 457/2 |goto Teldrassil 60.12,35.06
 stickystart "Collect_Webwood_Venom_Sacs"
 step
@@ -115,17 +108,13 @@ talk Iverron##8584
 turnin A Good Friend##4495 |goto Teldrassil 54.60,32.99
 accept A Friend in Need##3519 |goto Teldrassil 54.60,32.99
 step
-talk Dirania Silvershine##8583
-turnin A Friend in Need##3519 |goto Teldrassil 60.90,41.96
-accept Iverron's Antidote##3521 |goto Teldrassil 60.90,41.96
-step
 label "Collect_Webwood_Venom_Sacs"
 kill Webwood Spider##1986+
 |tip Inside and outside the cave.
 |tip Watch for respawns while in the area. |only if hardcore
 collect 10 Webwood Venom Sac##5166 |q 916/1 |goto Teldrassil 56.80,31.59
 step
-Allow Enemies to Kill You
+Allow Enemies to Kill You unless you are doing soul of iron
 |tip Inside and outside the cave.
 |tip Since you are less than level 11, you will not receive resurrection sickness when you revive.
 |tip This basically makes dying have no real penalty at this level.
@@ -138,12 +127,22 @@ Select _"Return me to life."_
 Resurrect at the Spirit Healer |complete not isdead |goto Teldrassil 58.72,42.34 |q 916 |zombiewalk
 |only if not hardcore
 step
+talk Conservator Ilthalaine##2079
+turnin The Balance of Nature##457 |goto Teldrassil 58.70,44.26
+step
+talk Dirania Silvershine##8583
+turnin A Friend in Need##3519 |goto Teldrassil 60.90,41.96
+accept Iverron's Antidote##3521 |goto Teldrassil 60.90,41.96
+step
+talk Keina##3589
+|tip Inside the building
+|tip Sell your goods from grinding.
+|tip Restock on ammo |only if Hunter
+vendor Keina##3589 |goto Teldrassil/0 59.32,41.12 |q 456
+step
 talk Gilshalan Windwalker##2082
 turnin Webwood Venom##916 |goto Teldrassil 57.81,41.65
 accept Webwood Egg##917 |goto Teldrassil 57.81,41.65
-step
-talk Conservator Ilthalaine##2079
-turnin The Balance of Nature##457 |goto Teldrassil 58.70,44.26
 step
 Run up the ramp inside the building |goto Teldrassil 59.19,40.00 < 10 |walk
 talk Frahun Shadewhisper##3594
@@ -157,6 +156,18 @@ talk Ayanna Everstride##3596
 |tip Up in the tall tree, inside the building.
 |tip Consider not training your spells to buy a better bow and more ammo instead.
 turnin Etched Sigil##3117 |goto Teldrassil 58.65,40.45
+|only if NightElf Hunter
+step
+Run up the large ramp |goto Teldrassil 57.53,41.63 < 15 |only if walking
+Enter the building |goto Teldrassil 58.51,40.71 < 10 |walk
+talk Mardant Strongoak##3597
+|tip Learn level 4 abilities
+|only if NightElf Druid
+step
+|tip Up in the tall tree, inside the building.
+|tip Consider not training your spells to buy a better bow and more ammo instead.
+turnin Etched Sigil##3117 |goto Teldrassil 58.65,40.45
+|only if NightElf Hunter
 step
 click Moonpetal Lily##152095+
 |tip They look like tall flowers with orange petals on the ground around this area.
@@ -185,6 +196,22 @@ step
 talk Tarindrella##1992
 turnin The Woodland Protector##459 |goto Teldrassil 57.83,45.20
 step
+talk Aleanea Miststriker##46257
+accept Corruption in Shadowglen##27480
+step
+talk Dirania Silvershine##8583
+turnin Iverron's Antidote##3521 |goto Teldrassil 60.90,41.96
+step
+kill 8 Frenzied Moonkin##46258 |q 27480/1 |goto Teldrassil 64,41
+kill 1 Natook##46259 |q 27480/2 |goto Teldrassil 64,41
+step
+talk Dirania Silvershine##8583
+|tip It is a TIMED quest! You will have 5 minutes to complete it.
+accept Iverron's Antidote##3522 |goto Teldrassil 60.90,41.96
+step
+talk Aleanea Miststriker##46257
+turnin Corruption in Shadowglen##27480
+step
 talk Gilshalan Windwalker##2082
 turnin Webwood Egg##917 |goto Teldrassil 57.81,41.65
 accept Tenaron's Summons##920 |goto Teldrassil 57.81,41.65
@@ -195,11 +222,7 @@ talk Tenaron Stormgrip##3514
 turnin Tenaron's Summons##920 |goto Teldrassil 59.07,39.45
 accept Crown of the Earth##921 |goto Teldrassil 59.07,39.45
 step
-talk Dirania Silvershine##8583
-|tip It is a TIMED quest! You will have 5 minutes to complete it.
-turnin Iverron's Antidote##3521 |goto Teldrassil 60.90,41.96
-accept Iverron's Antidote##3522 |goto Teldrassil 60.90,41.96
-step
+'Go the the moonwell to the north of your position
 use the Crystal Phial##5185
 collect Filled Crystal Phial##5184 |q 921/1 |goto Teldrassil 59.94,33.04
 |tip Grind enemies on the way to the fountain, we want to be level 6 soon. |only if level < 6
@@ -292,12 +315,18 @@ buy Walking Stick##2495 |n
 Visit the Vendor |vendor Shalomon##3609 |goto Teldrassil 56.31,59.49 |q 2438
 |only if Druid and itemcount(2495) == 0
 step
+talk Jeena Featherbow##6780
+accept Demons in Fel Rock##27483 |goto Teldrassil 61.16,47.64
+step
 talk Innkeeper Keldamyr##6736
 |tip Upstairs inside the building.
 turnin Dolanaar Delivery##2159 |goto Teldrassil 55.62,59.79
 step
 talk Innkeeper Keldamyr##6736
 home Dolanaar |goto Teldrassil 55.62,59.79
+step
+talk Melarith##6781
+accept Attack on the Gnarlpine##27477
 step
 talk Corithras Moonrage##3515
 turnin Crown of the Earth##928 |goto Teldrassil 56.14,61.71
@@ -313,11 +342,14 @@ Enter the building |goto Teldrassil 57.48,60.60 < 10 |walk
 talk Malorne Bladeleaf##3604
 |tip Inside the building.
 Learn Apprentice Herbalism |skillmax Herbalism,75 |goto Teldrassil 57.72,60.64
+|You only need to do this if you cant buy from AH or as a guildie
 |tip You need Herbalism, so you can gather 5 Earthroot as you quest in Teldrassil.
 |tip You will need the Earthroot for a later class quest.
 |tip Once you have the 5 Earthroot, you can abandon Herbalism, if you want to.
 |only if Druid
-stickystart "Collect_Earthroot_Druid"
+step 
+talk Malorne Bladeleaf##3604
+accept Herbal Medicine##27485
 step
 talk Denalan##2080
 |tip He walks around this area.
@@ -328,14 +360,11 @@ talk Denalan##2080
 |tip He walks around this area.
 accept Timberling Seeds##918 |goto Teldrassil 60.80,68.54
 accept Timberling Sprouts##919 |goto Teldrassil 60.80,68.54
-stickystart "Collect_Timberling_Seeds"
 step
 click Timberling Sprout##4608+
 |tip They look like green and brown vine balls on the ground around this area.
 collect 12 Timberling Sprout##5169 |q 919/1 |goto Teldrassil 59.52,72.20
 You can find more around [60.73,65.71]
-step
-label "Collect_Timberling_Seeds"
 kill Timberling##2022+
 collect 8 Timberling Seed##5168 |q 918/1 |goto Teldrassil 59.52,72.20
 You can find more around [60.73,65.71]
@@ -403,6 +432,7 @@ click Tallonkai's Dresser##126158
 |tip Inside the building.
 |tip Watch for patrols and respawns while in the area. |only if hardcore
 collect Emerald Dreamcatcher##8048 |q 2438/1 |goto Teldrassil 68.01,59.63
+kill 4 Gnarlpine warrior##20089 |q 27477/2
 step
 label "Collect_Strigid_Owl_Feathers"
 kill Strigid Owl##1995
@@ -538,6 +568,9 @@ Follow the path |goto Teldrassil 56.36,54.20 < 20 |only if walking and not subzo
 Enter the cave |goto Teldrassil 54.65,52.45 < 20 |walk |only if not subzone("Fel Rock")
 Follow the path |goto Teldrassil 53.79,50.64 < 10 |walk
 Continue following the path |goto Teldrassil 53.17,49.16 < 10 |walk
+kill Shadow Sprite##2003
+kill Rascal Sprite##2002
+collect 10 Demonic Essence##63353 |q 27483/1
 kill Lord Melenas##2038
 |tip Inside the cave.
 |tip He can spawn in multiple locations inside this cave.
@@ -611,12 +644,30 @@ talk Tallonkai Swiftroot##3567
 |tip At the top of the tower.
 turnin Twisted Hatred##932 |goto Teldrassil 55.57,56.95
 turnin Ferocitas the Dream Eater##2459 |goto Teldrassil 55.57,56.95
+turnin Demons in fel rock##27483 |goto Teldrassil 55.57,56.95
+accept Purifying the essence##27484
+step
+use the Demonic essence##63355 |goto Teldrassil 56,62
+collect Purified Essence##63354 |sticky
+turnin Purifying the essence##27484 |goto Teldrassil 55.57,56.95
+step
+Move on the road towards Darnassus
+talk Moon Priestess Amara##2151
+accept The Road to Darnassus##487
+step
+kill 4 Gnarlpine Ambusher##2152 |q 27477/1 |goto 46,52
+step
+get 8 Lily Whip |q 27485/1 |goto 40,65
+|tip They spawn around the edge of the lake
+step
+use the Tourmaline Phial##5621
+collect Filled Tourmaline Phial##5645 |q 933/1 |goto Teldrassil 42.42,67.07
 step
 click Strange Fruited Plant##6751
 accept The Glowing Fruit##930 |goto Teldrassil 42.63,76.10
 step
-use the Tourmaline Phial##5621
-collect Filled Tourmaline Phial##5645 |q 933/1 |goto Teldrassil 42.42,67.07
+kill 4 Gnarlpine Defender##2010 |q 27477/3 |goto 47,77
+kill 4 Gnarlpine Shaman##2009 |q 27477/4 |goto 47,77
 step
 Allow Enemies to Kill You
 |tip Try to die around this area, or to the east of here, so that you end up in Dolanaar.
@@ -634,6 +685,16 @@ step
 talk Corithras Moonrage##3515
 turnin Crown of the Earth##933 |goto Teldrassil 56.14,61.71
 accept Crown of the Earth##7383 |goto Teldrassil 56.14,61.71
+step
+talk Malorne Bladeleaf##3604
+turnin Herbal Medicine##27485 |goto Teldrassil 57.7,60.6
+step
+talk Melarith##6781
+turnin Attack on the Gnarlpine##27477
+accept Attack on the Gnarlpine##27478
+step
+talk Athridas Bearmantle##2078 |goto Teldrassil 56,57.3
+accept Relics of Wakening##483
 step
 talk Shalomon##3609
 |tip Inside the building.
@@ -665,20 +726,17 @@ path	55.81,58.31	55.50,58.45	54.54,58.48	53.98,58.19	53.59,57.61
 path	53.00,57.34	52.68,56.74	52.34,56.44	51.91,56.39	51.60,56.47
 path	51.30,56.67	51.00,56.58	50.55,56.09	50.43,55.56	50.50,54.54
 path	50.44,54.20	50.20,53.86
-talk Moon Priestess Amara##2151
-|tip She walks in a large pattern along the road from Dolanaar to Darnassus.
-accept The Road to Darnassus##487
 step
-kill 6 Gnarlpine Ambusher##2152 |q 487/1 |goto Teldrassil 46.22,53.46
-|tip Watch for patrols and respawns while in the area. |only if hardcore
-step
-Leave Ban'ethil Hollow |goto Teldrassil 45.02,52.24 < 20 |only if walking and subzone("Ban'ethil Hollow")
 talk Sentinel Arynia Cloudsbreak##3519
 accept The Enchanted Glade##937 |goto Teldrassil 38.31,34.36
 step
 use the Amethyst Phial##18152
 collect Filled Amethyst Phial##18151 |q 7383/1 |goto Teldrassil 38.43,34.04
+step
+talk Alanna Raveneye##3606 |goto Teldrassil 36.7,34.2
+accept Bloodfeather Eggs##27479
 stickystart "Collect_Bloodfeather_Belts"
+stickystart "Collect_Bloodfeather_Eggs"
 step
 click Strange Fronded Plant##6752
 accept The Shimmering Frond##931 |goto Teldrassil 34.60,28.85
@@ -696,6 +754,10 @@ Kill Bloodfeather enemies around this area
 collect 6 Bloodfeather Belt##5204 |q 937/1 |goto Teldrassil 34.55,34.99
 You can find more around [36.25,38.54]
 step
+label "Collect_Bloodfeather_Eggs"
+|tip Watch for patrols and respawns while in the area. |only if hardcore
+collect 6 Bloodfeather Egg##63349 |q 27479/1 |goto Teldrassil 34.55,34.99
+step
 Lead Mist Safely to Sentinel Arynia Cloudsbreak |q 938/1 |goto Teldrassil 38.31,34.36
 |tip Mist will follow you as you walk.
 |tip Try to hurry, this quest is timed.
@@ -704,6 +766,10 @@ talk Sentinel Arynia Cloudsbreak##3519
 turnin The Enchanted Glade##937 |goto Teldrassil 38.31,34.36
 turnin Mist##938 |goto Teldrassil 38.31,34.36
 accept Teldrassil##940 |goto Teldrassil 38.31,34.36
+step
+step
+talk Alanna Raveneye##3606 |goto Teldrassil 36.7,34.2
+turnin Bloodfeather Eggs##27479
 step
 Kill enemies on the way to Darnassus.
 |tip You will be returning to town, so it will be a good time to learn your level 10 abilities.
@@ -769,6 +835,35 @@ turnin Great Bear Spirit##5929 |goto Moonglade 56.21,30.64
 accept Back to Darnassus##5931 |goto Moonglade 56.21,30.64
 |only if NightElf Druid
 step
+talk Silva Fil'naveth##11800 |goto Moonglade 44.2,45.2
+Fly to Rut'theran Village
+|only if NightElf Druid
+step
+talk Mathrengyl Bearwalker##4217 |goto Darnassus 35.4,8.4
+turnin Back to Darnassus##5931 |goto Darnassus 35.38,8.41
+accept Body and Heart##6001 |goto Darnassus 35.38,8.41
+|only if NightElf Druid
+step
+talk Vesprystus##3838 |goto Teldrassil 58.4,94
+|tip walk trough the portal in darnassus
+fly to Auberdine in Darkshore
+goto Darkshore 41.8,46
+|tip be careful around the nightsabers as they can be high level even around town
+|only if NightElf Druid
+step
+Clear the moonkins around and inside the cave
+You want to have some space to use dust on the stone inside the cave
+To then bring the summoned moonkin outside so it can be kited with entangling roots
+use Cenarion Moondust##15208 |goto Darkshore 43.4,45.9
+talk Lunaclaw Spirit##12144
+|tip remember to interact with his text option
+|only if NightElf Druid
+step
+fly back to darnassus
+talk Mathrengyl Bearwalker##4217 |goto Darnassus 35.4,8.4
+turnin Body and Heart##6001 |goto Darnassus 35.38,8.41
+|only if NightElf Druid
+step
 talk Kyra Windblade##3598
 |tip Inside the building.
 accept Elanaria##1684 |goto Teldrassil 56.22,59.20
@@ -780,14 +875,6 @@ You Have Access to Stronger Ammo
 |tip When you restock ammo at vendors, make sure to buy level 10 ammo.
 Click Here to Continue |confirm |q 2518
 |only if Hunter
-step
-talk Corithras Moonrage##3515
-turnin Crown of the Earth##7383 |goto Teldrassil 56.14,61.71
-accept Crown of the Earth##935 |goto Teldrassil 56.14,61.71
-step
-talk Dazalar##3601
-accept Taming the Beast##6063 |goto Teldrassil 56.68,59.49
-|only if NightElf Hunter
 step
 use the Taming Rod##15921
 |tip Use it on a Webwood Lurker around this area.
@@ -801,6 +888,58 @@ talk Dazalar##3601
 turnin Taming the Beast##6063 |goto Teldrassil 56.68,59.49
 accept Taming the Beast##6101 |goto Teldrassil 56.68,59.49
 |only if NightElf Hunter
+step
+talk Dazalar##3601
+accept Taming the Beast##6063 |goto Teldrassil 56.68,59.49
+|only if NightElf Hunter
+step
+kill Agal##2162 |q 27478/1 |goto Teldrassil46.3,52
+|tip He is inside the cave with the ambushers
+step
+goto Teldrassil 44.3,57.9
+enter Ban'ethil Barrow Den
+Head down to the first bridges
+collect Black Feather Quill##3406 |goto 43.7,61.2
+collect Rune of Nesting##3408 |goto 44.4,60.7
+step
+head deeper into the cave |goto 43.4,60.6
+talk Oben Rageclaw##7317 
+accept The Sleeping Druid##2541
+step
+kill Greenpaw##1993 |q 27478/3 
+'tip he spawns right next to the box
+collect Sapphire of the Sky##3407 |goto 44.7,62.4
+kill Gnarlpine Shaman##2009
+collect Small Voodoo charm##8363
+step
+talk Oben Rageclaw##7317 
+turnin The Sleeping Druid##2541
+accept Druid of the Claw##2561
+step
+kill Rageclaw##7318 |goto 45.6,59.2
+|tip he wanders around the base of the room
+|tip you can use voodoo charm even if someone else killed him
+use Voodo Charm##8149
+|tip on the corpse
+step
+kill Nargle##46256 |q 27478/2 
+'tip he spawns right next to the box
+collect Raven Claw Talisman##3405 |goto 45.7,57.4
+step
+talk Oben Rageclaw##7317 
+turnin Druid of the Claw##2561
+'hearth Dolanaar
+|tip you can fight or die to get out as well
+step
+talk Melarith##6781
+turnin Attack on the Gnarlpine##27478
+step
+talk Athridas Bearmantle##2078
+turnin The Relics of Wakening##483
+step
+talk Corithras Moonrage##3515
+turnin Crown of the Earth##7383 |goto Teldrassil 56.14,61.71
+accept Crown of the Earth##935 |goto Teldrassil 56.14,61.71
 step
 talk Denalan##2080
 |tip He walks around this area.
@@ -851,16 +990,6 @@ talk Laurna Morninglight##3600
 |tip Inside the building.
 accept Returning Home##5629 |goto Teldrassil 55.57,56.75
 |only if NightElf Priest
-step
-map Teldrassil
-path follow strictbounce; loop off; ants straight; dist 40; markers none
-path	55.81,58.31	55.50,58.45	54.54,58.48	53.98,58.19	53.59,57.61
-path	53.00,57.34	52.68,56.74	52.34,56.44	51.91,56.39	51.60,56.47
-path	51.30,56.67	51.00,56.58	50.55,56.09	50.43,55.56	50.50,54.54
-path	50.44,54.20	50.20,53.86
-talk Moon Priestess Amara##2151
-|tip She walks in a large pattern along the road from Dolanaar to Darnassus.
-turnin The Road to Darnassus##487
 step
 talk Jannok Breezesong##3599
 |tip Inside the building.
@@ -1147,14 +1276,7 @@ You Can Now Train Your Pet
 Click Here to Continue |confirm |q 6344
 |only if NightElf Hunter
 step
-Enter the building |goto Darnassus 35.46,10.59 < 10 |walk
-talk Mathrengyl Bearwalker##4217
-|tip Upstairs inside the building.
-turnin Back to Darnassus##5931 |goto Darnassus 35.38,8.41
-accept Body and Heart##6001 |goto Darnassus 35.38,8.41
-|only if NightElf Druid
-step
-Enter the building |goto Darnassus 35.46,10.59 < 10 |walk |only if not Druid
+Enter the building |goto Darnassus 35.46,10.59 < 10 |walk 
 talk Arch Druid Fandral Staghelm##3516
 |tip He walks around inside the building, at the top.
 turnin Crown of the Earth##935 |goto Darnassus 34.80,9.24
@@ -1202,496 +1324,14 @@ turnin The Bounty of Teldrassil##6341 |goto Teldrassil 58.40,94.01
 accept Flight to Auberdine##6342 |goto Teldrassil 58.40,94.01
 |only if NightElf
 step
-talk Laird##4200
-|tip Inside the building.
-turnin Flight to Auberdine##6342 |goto Darkshore/0 36.77,44.29
-|only if NightElf
-step
-talk Shellei Brondir##1571
-fpath Menethil Harbor |goto Wetlands 9.49,59.69
-step
-_NOTE:_
-During the Next Step
-|tip You MUST swim to the EXACT location of the next step before logging out.
-|tip DO NOT use the stuck service if your character is not in the exact location of the next step.
-|tip We are going to use the unstuck feature to teleport to Ironforge.
-|tip You can skip this step if you have a warlock or mage friend to help you.
-Click Here to Continue |confirm |q 433 |future
-step
-_NOTE:_
-Swim to this EXACT Location |goto Wetlands 3.31,75.90 |notravel
-|tip You must be in this EXACT location before proceeding.
-Prepare to Use the Support Stuck Service
-|tip Push ESC to open game Main Menu.
-|tip Select Support
-|tip next find the button for Stuck Character service
-|tip click Continue
-|tip click "Select Character" (from the list)
-|tip click Move Character
-You will be logged out.
-Wait for an email or give it a few minutes to be sure.
-You may also log any other character in the meantime.
-It is an account service with 4h cooldown.
-So you will not be able to repeat it right away on another character of the same account.
-|tip After that, login to your character again, and you will be just outside of Ironforge.
-Reach the Gates of Ironforge |goto Dun Morogh 53.03,35.71 < 30 |noway |c |q 433 |future
-step
-talk Gryth Thurden##1573
-fpath Ironforge |goto Ironforge 55.50,47.75
-step
-Run up the stairs and enter the building |goto Ironforge 61.32,88.18 < 7 |walk
-talk Buliwyf Stonehand##11865
-|tip Inside the building.
-|tip This will allow you to equip two-handed axes and two-handed maces.
-Train Two-Handed Axes |complete weaponskill("TH_AXE") > 0 |goto Ironforge 61.17,89.52
-Train Two-Handed Maces |complete weaponskill("TH_MACE") > 0 |goto Ironforge 61.17,89.52
-|only if Warrior
-step
-Enter the building |goto Dun Morogh 45.97,48.83 < 10 |walk
-talk Razzle Sprysprocket##1269
-|tip Inside the building.
-accept Operation Recombobulation##412 |goto Dun Morogh 45.85,49.37
-step
-talk Senir Whitebeard##1252
-accept Frostmane Hold##287 |goto Dun Morogh 46.73,53.83
-step
-Follow the path |goto Dun Morogh 39.61,48.01 < 40 |only if walking
-Follow the path up |goto Dun Morogh 36.01,51.96 < 15 |only if walking
-|tip Go out of your way to grind mobs en route to this quest.
-talk Tundra MacGrann##1266
-|tip On top of the mountain.
-|tip As you travel to him, be careful to avoid the elite yeti that walks around this area.
-accept Tundra MacGrann's Stolen Stash##312 |goto Dun Morogh 34.57,51.65
-step
-Enter the cave |goto Dun Morogh 37.80,53.69 < 20 |walk
-click MacGrann's Meat Locker##272
-|tip Inside the cave.
-|tip Wait for the elite yeti to leave the cave and walk away before you enter the cave.
-collect MacGrann's Dried Meats##2667 |q 312/1 |goto Dun Morogh 38.51,53.93
-|tip He runs back quickly after he walks down the path a bit.
-|tip Try to get into the cave as quick as you can when he leaves it, to give yourself time to run back out safely.
-|tip If he attacks you as you leave the cave, just run away.
-step
-Follow the path up |goto Dun Morogh 36.01,51.96 < 15 |only if walking
-talk Tundra MacGrann##1266
-|tip On top of the mountain.
-turnin Tundra MacGrann's Stolen Stash##312 |goto Dun Morogh 34.57,51.65
-stickystart "Kill_Frostmane_Headhunters"
-step
-Enter the cave |goto Dun Morogh 24.84,50.89 < 20 |walk
-Follow the path down |goto Dun Morogh 22.61,50.53 < 20 |walk
-Fully Explore Frostmane Hold |q 287/2 |goto Dun Morogh 22.79,52.10
-|tip Inside the cave.
-|tip Watch for patrols and respawns while inside the cave. |only if hardcore
-step
-label "Kill_Frostmane_Headhunters"
-Follow the path up |goto Dun Morogh 21.78,50.47 < 20 |walk
-kill 5 Frostmane Headhunter##1123 |q 287/1 |goto Dun Morogh 24.87,50.90
-|tip Inside and outside the cave. |notinsticky
-|tip Watch for patrols and respawns while inside the cave. |only if hardcore |notinsticky
-stickystart "Collect_Gyromechanic_Gears"
-step
-Leave the cave |goto Dun Morogh 25.07,50.99 < 20 |walk |only if subzone("Frostmane Hold") and _G.IsIndoors()
-kill Leper Gnome##1211+
-|tip Watch for patrols and respawns while in the area. |only if hardcore |notinsticky
-collect 8 Restabilization Cog##3083 |q 412/1 |goto Dun Morogh 25.64,43.33
-step
-label "Collect_Gyromechanic_Gears"
-kill Leper Gnome##1211+
-|tip Watch for patrols and respawns while in the area. |only if hardcore |notinsticky
-collect 8 Gyromechanic Gear##3084 |q 412/2 |goto Dun Morogh 25.64,43.33
-step
-Leave the building |goto Dun Morogh 46.95,52.05 < 10 |walk |only if subzone("Thunderbrew Distillery")
-talk Senir Whitebeard##1252
-turnin Frostmane Hold##287 |goto Dun Morogh 46.73,53.82
-step
-Enter the building |goto Dun Morogh 45.97,48.84 < 10 |walk
-talk Razzle Sprysprocket##1269
-|tip Inside the building.
-turnin Operation Recombobulation##412 |goto Dun Morogh 45.85,49.37
-step
-talk Rudra Amberstill##1265
-accept Protecting the Herd##314 |goto Dun Morogh 63.08,49.89
-|tip Only do this quest if you purchased throwing weapons |only if Warrior or Rogue
-|tip And you trained Gouge |only if Rogue
-|tip And you trained Hamstring |only if Warrior
-|tip Skip this step if you aren't comfortable cheesing an elite, you will just need to grind more later. |only if hardcore
-|tip We strongly recommend watching the video below before attempting this quest.
-Click Here To Copy The Video Link |popuptext youtu.be/z1BVC3I33qE
-|only if not Paladin
-step
-Aggro Vagash |goto Dun Morogh 62.41,48.08 > 10
-|tip He can spawn deep in the cave. Wait for him to come out if you want an easier time.
-|tip Follow the arrow and kite him to the fence location.
-|tip Hop back and forth over the fence so Vagash can't attack you while you whittle him down.
-|tip We strongly recommend watching the video below before attempting this quest.
-Click Here To Copy The Video Link |popuptext youtu.be/z1BVC3I33qE
-collect Fang of Vagash##3627 |q 314/1 |goto Dun Morogh 63.90,49.86
-|only if not Paladin
-step
-talk Rudra Amberstill##1265
-turnin Protecting the Herd##314 |goto Dun Morogh 63.08,49.89
-|only if not Paladin
-step
-talk Senator Mehr Stonehallow##1977
-accept The Public Servant##433 |goto Dun Morogh 68.67,55.97
-step
-talk Foreman Stonebrow##1254
-accept Those Blasted Troggs!##432 |goto Dun Morogh 69.08,56.33
-stickystart "Kill_Rockjaw_Skullthumpers"
-step
-Enter the cave |goto Dun Morogh 70.70,56.49 < 20 |walk
-kill 10 Rockjaw Bonesnapper##1117 |q 433/1 |goto Dun Morogh 70.98,54.77
-|tip Inside the cave.
-|tip Watch for patrols and respawns while in the area. |only if hardcore
-step
-label "Kill_Rockjaw_Skullthumpers"
-kill 6 Rockjaw Skullthumper##1115 |q 432/1 |goto Dun Morogh 70.70,56.49
-|tip Inside and outside the cave. |notinsticky
-|tip Watch for patrols and respawns while in the area. |only if hardcore |notinsticky
-step
-Leave the cave |goto Dun Morogh 70.70,56.49 < 20 |walk |only if subzone("Gol'Bolar Quarry Mine")
-Follow the path up |goto Dun Morogh 67.86,57.69 < 20 |only if walking
-talk Senator Mehr Stonehallow##1977
-turnin The Public Servant##433 |goto Dun Morogh 68.67,55.97
-step
-talk Foreman Stonebrow##1254
-turnin Those Blasted Troggs!##432 |goto Dun Morogh 69.08,56.33
-step
-talk Miner Grumnal##1360
-turnin Ore for Grumnal##26687 |goto Dun Morogh 69.00,55.10
-step
-Follow the road |goto Dun Morogh 67.68,52.75 < 40 |only if walking and subzone("Gol'Bolar Quarry")
-Follow the road and run through the tunnel |goto Dun Morogh 81.21,42.70 < 10 |only if walking and not subzone("North Gate Outpost")
-talk Pilot Hammerfoot##1960
-accept The Lost Pilot##419 |goto Dun Morogh 83.89,39.19
-step
-click A Dwarven Corpse##2059
-turnin The Lost Pilot##419 |goto Dun Morogh 79.67,36.17
-accept A Pilot's Revenge##417 |goto Dun Morogh 79.67,36.17
-step
-kill Mangeclaw##1961
-|tip He walks around this area.
-collect Mangy Claw##3183 |q 417/1 |goto Dun Morogh 78.31,37.76
-step
-talk Pilot Hammerfoot##1960
-turnin A Pilot's Revenge##417 |goto Dun Morogh 83.89,39.19
-step
-Run through the tunnel |goto Dun Morogh 84.42,31.02 < 10 |only if walking and not zone("Loch Modan")
-Enter the building |goto Loch Modan 23.53,17.89 < 10 |walk
-talk Mountaineer Stormpike##1343
-|tip Upstairs inside the building.
-accept Filthy Paws##307 |goto Loch Modan 24.76,18.40
-step
-_NOTE:_
-Tame a Forest Lurker
-|tip Abandon your current pet.
-|tip This pet doesn't eat fish.
-|tip Feed it extra meat that you find during the next few steps.
-|tip Use your "Tame Beast" ability on a Forest Lurker.
-|tip They look like brown spiders around this area.
-|tip This will be your permanent pet for a little while.
-Click Here to Continue |confirm |goto Loch Modan 35.69,31.78 |q 307
-You can find more around: |notinsticky
-[Loch Modan 29.17,23.57]
-[Loch Modan 29.43,48.28]
-|only if NightElf Hunter
-stickystart "Collect_Boar_Intestines"
-stickystart "Collect_Spider_Ichors"
-stickystart "Collect_Bear_Meat"
-step
-Enter the building |goto Loch Modan 35.23,47.75 < 7 |walk
-talk Vidra Hearthstove##1963
-|tip Inside the building.
-accept Thelsamar Blood Sausages##418 |goto Loch Modan 34.83,49.28
-|tip This can be completed later.
-stickystop "Collect_Boar_Intestines"
-stickystop "Collect_Spider_Ichors"
-stickystop "Collect_Bear_Meat"
-step
-talk Yanni Stoutheart##1682
-|tip Inside the building.
-|tip If you can afford it, and you need more bag space, buy bags.
-accept A Proper Sendoff##26838 |goto Loch Modan 34.76,48.62
-Visit the Vendor |vendor Yanni Stoutheart##1682 |goto Loch Modan 34.76,48.62 |q 416 |future
-step
-map Loch Modan
-path follow strictbounce; loop off; ants straight; dist 20; markers none
-path	32.67,49.72	33.27,49.16	33.86,48.37	34.30,47.64	34.91,47.05
-path	35.56,46.76	36.09,46.37	37.11,46.01	37.32,45.60	37.37,44.45
-path	37.29,43.33	36.73,41.98
-talk Mountaineer Kadrell##1340
-|tip He walks around this area.
-accept Rat Catching##416
-accept Mountaineer Stormpike's Task##1339
-|tip This won't be available if you've picked up Stormpike's Order. |only if haveq(1338)
-stickystart "Collect_Boar_Intestines"
-stickystart "Collect_Spider_Ichors"
-stickystart "Collect_Bear_Meat"
-stickystart "Collect_Tunnel_Rat_Ears"
-step
-click Miners' League Crates##271+
-|tip They look like piles of brown boxes on the ground around this area inside the mine.
-|tip This mine can be dangerous, so try to stay near the entrance and wait for boxes to respawn, if you can, so you can leave quickly when you're finished.
-|tip Watch for patrols and respawns while in the area. |only if hardcore
-|tip Tunnel Rat Geomancers are casters that deal heavy damage. |only if hardcore
-collect 4 Miners' Gear##2640 |q 307/1 |goto Loch Modan 35.48,18.85
-step
-label "Collect_Tunnel_Rat_Ears"
-Leave the mine |goto Loch Modan 35.48,18.85 < 10 |walk |only if subzone("Silver Stream Mine") and _G.IsIndoors()
-Kill Tunnel Rat enemies around this area
-|tip Watch for patrols and respawns while in the area. |only if hardcore
-collect 12 Tunnel Rat Ear##3110 |q 416/1 |goto Loch Modan 24.57,29.79
-You can find more around [26.08,43.64]
-step
-Enter the building |goto Loch Modan 23.53,17.89 < 10 |walk
-talk Mountaineer Stormpike##1343
-|tip Upstairs inside the building.
-turnin Filthy Paws##307 |goto Loch Modan 24.76,18.40
-turnin Mountaineer Stormpike's Task##1339 |goto Loch Modan 24.76,18.40
-accept Stormpike's Order##1338 |goto Loch Modan 24.76,18.40
-step
-label "Collect_Boar_Intestines"
-kill Mountain Boar##1190+
-|tip Kill the other types of enemies around this area for extra xp. |notinsticky
-collect 3 Boar Intestines##3172 |goto Loch Modan 36.99,34.36 |q 418 |future
-You can find more around [Loch Modan 29.17,23.57]
-step
-label "Collect_Spider_Ichors"
-kill Forest Lurker##1195+
-|tip Kill the other types of enemies around this area for extra xp. |notinsticky
-collect 3 Spider Ichor##3174 |goto Loch Modan 35.69,31.78 |q 418 |future
-You can find more around: |notinsticky
-[29.17,23.57]
-[29.43,48.28]
-step
-label "Collect_Bear_Meat"
-kill Elder Black Bear##1186+
-|tip Kill the other types of enemies around this area for extra xp. |notinsticky
-collect 3 Bear Meat##3173 |goto Loch Modan 35.68,32.10 |q 418 |future
-You can find more around: |notinsticky
-[30.73,25.86]
-[28.66,11.57]
-[24.03,25.79]
-[27.45,28.54]
-[28.09,40.94]
-step
-talk Yanni Stoutheart##1682
-|tip Inside the building.
-|tip If you can afford it, and you need more bag space, buy bags.
-Visit the Vendor |vendor Yanni Stoutheart##1682 |goto Loch Modan 34.76,48.62 |q 1338
-step
-talk Vidra Hearthstove##1963
-|tip Inside the building.
-turnin Thelsamar Blood Sausages##418 |goto Loch Modan 34.83,49.28
-step
-talk Yanni Stoutheart##1682
-|tip Inside the building nearby.
-turnin A Proper Sendoff##26838 |goto Loch Modan 34.76,48.62
-step
-map Loch Modan
-path follow strictbounce; loop off; ants straight; dist 20; markers none
-path	32.67,49.72	33.27,49.16	33.86,48.37	34.30,47.64	34.91,47.05
-path	35.56,46.76	36.09,46.37	37.11,46.01	37.32,45.60	37.37,44.45
-path	37.29,43.33	36.73,41.98
-talk Mountaineer Kadrell##1340
-|tip He walks around this area.
-turnin Rat Catching##416
-step
-talk Mountaineer Cobbleflint##1089
-accept In Defense of the King's Lands##224 |goto Loch Modan 22.07,73.12
-step
-talk Thorgrum Borrelson##1572
-fpath Thelsamar |goto Loch Modan 33.94,50.95
-step
-Enter the building |goto Loch Modan 23.71,75.47 < 10 |walk
-talk Captain Rugelfuss##1092
-|tip Upstairs inside the building.
-accept The Trogg Threat##267 |goto Loch Modan 23.23,73.67
-stickystart "Kill_Stonesplinter_Troggs"
-stickystart "Kill_Stonesplinter_Scouts"
-step
-Follow the road to the path here |goto Loch Modan 29.32,66.73 < 40 |only if walking and not subzone("Stonesplinter Valley")
-Kill Stonesplinter enemies around this area
-|tip Watch for patrols and respawns while in the area. |only if hardcore
-|tip Enemies tend to bunch together, so be prepared for adds. |only if hardcore
-collect 8 Trogg Stone Tooth##2536 |q 267/1 |goto Loch Modan 32.51,73.25
-step
-label "Kill_Stonesplinter_Troggs"
-kill 10 Stonesplinter Trogg##1161 |q 224/1 |goto Loch Modan 32.51,73.25
-|tip Watch for patrols and respawns while in the area. |only if hardcore |notinsticky
-|tip Enemies tend to bunch together, so be prepared for adds. |only if hardcore |notinsticky
-step
-label "Kill_Stonesplinter_Scouts"
-kill 10 Stonesplinter Scout##1162 |q 224/2 |goto Loch Modan 32.51,73.25
-|tip Watch for patrols and respawns while in the area. |only if hardcore |notinsticky
-|tip Enemies tend to bunch together, so be prepared for adds. |only if hardcore |notinsticky
-step
-Leave Stonesplinter Valley and follow the road |goto Loch Modan 30.57,69.69 < 20 |only if walking and subzone("Stonesplinter Valley")
-talk Mountaineer Cobbleflint##1089
-turnin In Defense of the King's Lands##224 |goto Loch Modan 22.07,73.13
-step
-Enter the building |goto Loch Modan 23.71,75.45 < 7 |walk
-talk Captain Rugelfuss##1092
-|tip Upstairs inside the building.
-turnin The Trogg Threat##267 |goto Loch Modan 23.23,73.67
-step
-Grind mobs in the area
-|tip We will hearth back to Darnassus and train our level 14 spells soon.
-|tip Watch for patrols and respawns while in the area. |only if hardcore
-|tip Enemies tend to bunch together, so be prepared for adds. |only if hardcore
-ding 14 |goto Loch Modan 32.51,73.25
-step
-Run up the stairs and enter the building |goto Ironforge 61.32,88.18 < 7 |walk
-talk Bixi Wobblebonk##13084
-|tip Inside the building.
-|tip This will allow you to equip thrown weapons.
-Train Thrown |complete weaponskill("THROWN") > 0 |goto Ironforge 62.23,89.62
-|only if Warrior
-step
-Follow the path |goto Ironforge 72.82,50.18 < 20 |walk
-Enter the Deeprun Tram |complete subzone("Deeprun Tram") |goto Ironforge 76.97,51.25 |c |q 6662 |future
-|tip Walk into the swirling portal.
-|only if Warrior or Rogue
-step
-_Inside Deeprun Tram:_
-talk Monty##12997
-|tip On the middle platform, near the wall.
-|tip In the Ironforge section of the Deeprun Tram.
-accept Deeprun Rat Roundup##6661
-|only if Warrior or Rogue
-step
-_Inside Deeprun Tram:_
-use Rat Catcher's Flute##17117
-|tip Use it on Deeprun Rats around this area.
-|tip They look like small grey rats on the ground around this area.
-|tip In the Ironforge section of the Deeprun Tram.
-Capture #5# Rats |q 6661/1
-|only if Warrior or Rogue
-step
-_Inside Deeprun Tram:_
-talk Monty##12997
-|tip On the middle platform, near the wall.
-|tip In the Ironforge section of the Deeprun Tram.
-turnin Deeprun Rat Roundup##6661
-|only if Warrior or Rogue
-step
-_Inside Deeprun Tram:_
-Watch the dialogue
-talk Monty##12997
-|tip On the middle platform, near the wall.
-|tip In the Ironforge section of the Deeprun Tram.
-accept Me Brother, Nipsy##6662
-|only if Warrior or Rogue
-step
-_Inside Deeprun Tram:_
-Ride the Tram
-|tip Ride the Deeprun Tram from Ironforge to Stormwind City.
-talk Nipsy##13018
-|tip On the middle platform, near the wall.
-|tip In the Stormwind City section of the Deeprun Tram.
-turnin Me Brother, Nipsy##6662
-|only if Warrior or Rogue
-step
-Inside Deeprun Tram:_
-Enter Stormwind City |complete zone("Stormwind City") |q 1338
-|tip Walk into the swirling portal.
-|only if Warrior or Rogue
-step
-talk Furen Longbeard##5413
-turnin Stormpike's Order##1338 |goto Stormwind City 58.09,16.53
-|only if Warrior or Rogue
-step
-Run through the doorway |goto Stormwind City 74.91,51.56 < 10 |only if walking
-Enter the building |goto Stormwind City 77.97,48.19 < 10 |walk
-talk Ilsa Corbin##5480
-|tip Upstairs inside the building.
-accept A Warrior's Training##1638 |goto Stormwind City 78.50,45.71
-|only if NightElf Warrior
-step
-Leave the Command Center |goto Stormwind City 74.89,51.59 < 10 |walk |only if subzone("Command Center")
-Enter the building |goto Stormwind City 71.66,39.89 < 10 |walk
-talk Harry Burlguard##6089
-|tip Inside the building.
-turnin A Warrior's Training##1638 |goto Stormwind City 74.25,37.26
-accept Bartleby the Drunk##1639 |goto Stormwind City 74.25,37.26
-|only if NightElf Warrior
-step
-talk Bartleby##6090
-|tip He walks around this area inside the building.
-turnin Bartleby the Drunk##1639 |goto Stormwind City 73.83,37.17
-accept Beat Bartleby##1640 |goto Stormwind City 73.83,37.17
-|tip He will attack you immediately after you accept this quest.
-|only if NightElf Warrior
-step
-kill Bartleby##6090
-|tip He walks around this area inside the building.
-|tip He will eventually surrender.
-Beat Bartleby |q 1640/1 |goto Stormwind City 73.83,37.17
-|only if NightElf Warrior
-step
-talk Bartleby##6090
-|tip He walks around this area inside the building.
-turnin Beat Bartleby##1640 |goto Stormwind City 73.83,37.17
-accept Bartleby's Mug##1665 |goto Stormwind City 73.83,37.17
-|only if NightElf Warrior
-step
-talk Harry Burlguard##6089
-|tip Inside the building.
-turnin Bartleby's Mug##1665 |goto Stormwind City 74.25,37.26
-|only if NightElf Warrior
-step
-Enter the building |goto Stormwind City 56.66,57.71 < 10 |walk
-talk Woo Ping##11867
-|tip Inside the building.
-|tip This will allow you to equip two-handed swords.
-Train Two-Handed Swords |complete weaponskill("TH_SWORD") > 0 |goto Stormwind City 57.13,57.71
-|only if Warrior
-step
-talk Gunther Weller##1289
-|tip Inside the building.
-buy Quarter Staff##854 |n
-|tip If you can afford it.
-|tip If you have better, skip this step.
-Visit the Vendor |vendor Gunther Weller##1289 |goto Stormwind City 57.55,57.07 |q 963 |future
-|only if Warrior and itemcount(854) == 0
-step
-Enter the building |goto Stormwind City 56.66,57.71 < 10 |walk
-talk Woo Ping##11867
-|tip Inside the building.
-|tip This will allow you to equip one-handed swords.
-Train One-Handed Swords |complete weaponskill("SWORD") > 0 |goto Stormwind City 57.13,57.71
-|only if Rogue
-step
-talk Gunther Weller##1289
-|tip Inside the building.
-buy Cutlass##851 |n
-|tip If you can afford it.
-|tip If you have better, skip this step.
-Visit the Vendor |vendor Gunther Weller##1289 |goto Stormwind City 57.55,57.07 |q 963 |future
-|only if Rogue and itemcount(851) == 0
-step
-Run up the ramp |goto Stormwind City 62.39,62.31 < 15 |only if walking
-talk Dungar Longdrink##352
-|tip Inside the building.
-fpath Stormwind |goto Stormwind City 66.27,62.14
-|only if Warrior or Rogue
-step
-talk Chief Archaeologist Greywhisker##2912
-|tip He's outside the temple
-accept Trouble In Darkshore?##730 |goto Darnassus 31.40, 83.20
-step
-talk Jocaste##4146 |only if Hunter
-talk Syurna##4163 |only if Rogue
-talk Sildanair##4089 |only if Warrior
-talk Denatharion##4218 |only if Druid
-talk Jandria##4091 |only if Priest
-trainer Jocaste##4146 |goto Darnassus/0 40.40,8.58 |only if Hunter |q 730
-trainer Sildanair##4089 |goto Darnassus/0 61.78,42.28 |only if Warrior |q 730
-trainer Syurna##4163 |goto Darnassus/0 36.97,21.86 |only if Rogue |q 730
-trainer Denatharion##4218  |goto Darnassus/0 34.74,7.43 |only if Druid |q 730
-trainer Jandria##4091 |goto Darnassus/0 37.91,82.80 |only if Priest |q 730
-|tip In the basement of the tree. |only if Rogue
-|tip Train your spells.
+talk Laird##4200 |goto 36.8,44.3
+turnin Flight to Auberdine##6342 
+accept Return to Nessa##6343
+fly back to Darnassus
+step
+talk Nessa Shadowsong##10118
+turnin Return to Nessa##6343
+step
+fly back to darkshore
 ]]
 )
