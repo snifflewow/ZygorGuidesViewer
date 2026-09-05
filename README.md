@@ -31,7 +31,7 @@ Alliance guides live in `Guides/Leveling/Alliance/`, split by zone. Empty status
 |------|------|--------|
 | `01-15_HumanStarter.lua` | Human Starter (1-15) | |
 | `01-13_DwarfGnomeStarter.lua` | Dwarf & Gnome Starter (1-13) | |
-| `01-13_NightElfStarter.lua` | Night Elf Starter (1-13) |updated with epoch quests, done with druid only |
+| `01-13_NightElfStarter.lua` | Night Elf Starter (1-13) |updated with epoch quests, tested with druid only |
 | `13-22_Darkshore.lua` | Darkshore (13-22) | |
 | `17-18_LochModan.lua` | Loch Modan (17-18) | |
 | `18-28_RedridgeMountains.lua` | Redridge Mountains (18-28) | |
