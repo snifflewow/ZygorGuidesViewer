@@ -35,7 +35,8 @@ step
 talk Caylais Moonfeather##3841
 fpath Auberdine |goto Darkshore 36.34,45.58
 step
-accept Wanted: Mistfin##26207 |goto Darkshore 37.70,43.39
+|tip TODO FIX THIS QUEST ID AS IT WAS GRIZZLETOOTH INSTEAD OF MISTFIN
+accept Wanted: Mistfin##26208 |goto Darkshore 37.70,43.39
 |tip from the wanted sign
 step
 talk Barithras Moonshade##3583

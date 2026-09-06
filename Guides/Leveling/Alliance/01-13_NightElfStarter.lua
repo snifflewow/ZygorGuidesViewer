@@ -1232,10 +1232,6 @@ Open the Enchanting Profession Window
 collect Lesser Magic Wand##11287 |q 923
 |only if Priest
 step
-talk Innkeeper Saelienne##6735
-home Craftsmen's Terrace |goto Darnassus/0 67.37,15.72
-|tip This is a very important hearthstone, make sure you avoid overriding it until we hearth next.
-step
 label "Skip_Wand_Priest"
 talk Rellian Greenspyre##3517
 turnin Tumors##923 |goto Darnassus 38.19,21.64

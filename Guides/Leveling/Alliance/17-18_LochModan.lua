@@ -33,31 +33,23 @@ talk Lina Hearthstove##9989
 Click Here to Continue |confirm |goto Loch Modan 34.64,48.09 |q 436 |future
 |only if Hunter
 step
-talk Kali Healtouch##1473
-talk Mountaineer Ozmok##2510
-accept Medicinal Restocking##26842 |goto Loch Modan 36.5,48.5
-accept Securing the Loch##26843 |goto Loch Modan 35,46.8
-accept WANTED: Mother Tessa##26845
+accept WANTED: Mother Tessa##26845 |goto 34.9,47.7
+|tip the wanted board outside the in
 |tip This is a group quest and can be completed along the way.
 step
-collect 8 Loch Weed##62671 |q 26842/1 |goto Loch Modan 40,55
-|tip These grow in the water of The Loch.
-|tip You can also collect them while doing the threshadon kills below.
+talk Mountaineer Ozmok##2510
+accept Securing the Loch##26843 |goto Loch Modan 35,46.8
 step
-kill 10 Young Threshadon##1224 |q 26843/1 |goto Loch Modan 45,60
-|tip These creatures are in The Loch.
-|tip This quest is a group quest but can be done solo.
-step
-kill Mother Tessa##45824 |q 26845/1 |goto Loch Modan 51.6,62.2
-|tip This is a level 20 elite threshadon.
-|tip This is a group quest. Group up before attempting.
-|tip You can come back to this later if needed.
+talk Kali Healtouch##1473
+accept Medicinal Restocking##26842 |goto Loch Modan 36.5,48.5
 step
 Enter the building |goto Loch Modan 37.18,47.10 < 10 |walk
 talk Jern Hornhelm##1105
 |tip Downstairs inside the building.
 |tip He sometimes walks out near the entrance of the building.
 accept Ironband's Excavation##436 |goto Loch Modan 37.24,47.39
+stickystart "loch_weed"
+stickystart "loch_threshes"
 step
 _NOTE:_
 |tip You can tame any other beast along the way to help you get here and find a Wood Lurker to tame.
@@ -72,9 +64,16 @@ Tame a Wood Lurker
 Click Here to Continue |confirm |goto Loch Modan 59.86,25.29 |q 436
 |only if Hunter
 step
+'collect weed and kill treshers while moving
+'you do not need to complete the stickys
 talk Magmar Fellhew##1345
 turnin Ironband's Excavation##436 |goto Loch Modan 64.90,66.65
 accept Gathering Idols##297 |goto Loch Modan 64.90,66.65
+stickystop "loch_weed"
+stickystop "loch_threshes"
+step
+talk Alderen Cordon##1214 |goto 64.9,66.1
+accept Lost Artifacts##26841
 step
 talk Prospector Ironband##1344
 accept Excavation Progress Report##298 |goto Loch Modan 65.93,65.62
@@ -85,6 +84,11 @@ Kill enemies around this area
 |tip Enemies will run away when at low health. |only if hardcore
 |tip This area can be very dangerous, stick to the outskirts and don't forget to look up occasionally. |only if hardcore
 collect 8 Carved Stone Idol##2636 |q 297/1 |goto Loch Modan 70.31,62.79
+collect 5 Lost Artifact##62669 |q 26841/1 |goto Loch Modan 70.31,62.79
+|tip these look like big stone slabs/tablets
+step
+talk Alderen Cordon##1214 |goto 64.9,66.1
+turnin Lost Artifacts##26841
 step
 talk Magmar Fellhew##1345
 turnin Gathering Idols##297 |goto Loch Modan 64.90,66.65
@@ -163,17 +167,18 @@ step
 talk Bingles Blastenheimer##6577
 |tip He walks around this area.
 accept Bingles' Missing Supplies##2038 |goto Loch Modan 63.56,47.92
-stickystart "Collect_Crocolisk_Skin"
+stickystart "loch_weed"
+stickystart "loch_threshes"
 step
 kill Loch Crocolisk##1693+
 collect 5 Crocolisk Meat##2924 |q 385/1 |goto Loch Modan 54.84,38.49
 |tip Be careful not to accidentally sell these to a vendor.
 You can find more around [54.80,54.28]
-step
-label "Collect_Crocolisk_Skin"
 kill Loch Crocolisk##1693+ |notinsticky
 collect 6 Crocolisk Skin##2925 |q 385/2 |goto Loch Modan 54.84,38.49
 You can find more around [54.80,54.28]
+stickystop "loch_weed"
+stickystop "loch_threshes"
 step
 _NOTE:_
 This Quest is Optional
@@ -259,29 +264,64 @@ buy Fine Longbow##11304 |n
 Visit the Vendor |vendor Cliff Hadin##1687 |goto Loch Modan 83.02,62.96 |q 385
 |only if Hunter and itemcount(11304) == 0
 step
-talk Kali Healtouch##1473
-talk Mountaineer Ozmok##2510
-talk Magistrate Bluntnose##1139
-turnin Medicinal Restocking##26842 |goto Loch Modan 36.5,48.5
-turnin Securing the Loch##26843 |goto Loch Modan 35,46.8
-turnin WANTED: Mother Tessa##26845 |goto Loch Modan 34.6,44.5
+label "loch_weed"
+collect 8 Loch Weed##62671 |q 26842/1 |goto Loch Modan 40,55
+|tip These grow in the water of The Loch.
+|tip You can also collect them while doing the threshadon kills below.
 step
-talk Lina Hearthstove##9989
-|tip Abandon your temporary pet and get your permanent pet from the stable.
-|tip Teach "Bite 3" to your permanent pet.
-Click Here to Continue |confirm |goto Loch Modan 34.64,48.09 |q 298
-|only if Hunter
+label "loch_threshes"
+kill 10 Young Threshadon##1224 |q 26843/1 |goto Loch Modan 45,60
+|tip These creatures are in The Loch.
+step
+kill Mother Tessa##45824 |q 26845/1 |goto Loch Modan 51.6,62.2
+|tip This is a level 20 elite threshadon.
+|tip This is a group quest. Group up before attempting.
+|tip she has a 3 second stun and hits for 120-150 on leather
 step
 Enter the building |goto Loch Modan 37.18,47.10 < 10 |walk
 talk Jern Hornhelm##1105
 |tip Downstairs inside the building.
 |tip He sometimes walks out near the entrance of the building.
 turnin Excavation Progress Report##298 |goto Loch Modan 37.24,47.39
+accept Report to Ironforge##301
 step
+talk Mountaineer Ozmok##2510
+turnin Securing the Loch##26843 |goto Loch Modan 35,46.8
+step
+talk Kali Healtouch##1473
+turnin Medicinal Restocking##26842 |goto Loch Modan 36.5,48.5
+step
+talk Magistrate Bluntnose##1139
+turnin WANTED: Mother Tessa##26845 |goto Loch Modan 34.6,44.5
+'If you were unable to find a group abandon the quest and move to the next step
+talk Lina Hearthstove##9989
+|tip Abandon your temporary pet and get your permanent pet from the stable.
+|tip Teach "Bite 3" to your permanent pet.
+Click Here to Continue |confirm |goto Loch Modan 34.64,48.09 |q 298
+|only if Hunter
+step
+goto 22.8,70.7 
+goto 19.8,63 |'Head up north west to the tunnel
+goto Dun Morogh 52,35 |'Follow the road to Ironforge
+|tip try to hitch a ride on the caravans to kharanos
+|only if NightElf
+step
+'learn dwarf and gnome weapon skills
+talk Buliwyf Stonehand##11865 |goto Ironforge 61.3,89.3
+'Learn one and two handed maces if you can afford it |only if NightElf Druid
+talk Bixi Wobblebonk##13084 |goto Ironforge 61.9,89.5
+|only if NightElf
+step
+talk Gyrth Thurden##1573 |goto 55.7,48
+fpath Ironforge
+|only if NightElf
+step
+'Fly to to Ironforge |goto Ironforge 74.64,11.73 |only if not NightElf
 Enter the building |goto Ironforge 74.64,11.73 < 7 |walk
 talk Prospector Stormpike##1356
 |tip Inside the building.
 turnin The Strange Idol##26844 |goto Ironforge 74.64,11.73
+turnin Report to Ironforge##301 |goto Ironforge 74.64,11.73
 step
 Enter the building |goto Ironforge 72.18,67.50 < 7 |walk
 talk Skolmin Goldfury##5122
@@ -317,25 +357,56 @@ talk Renzik "The Shiv"##6946
 accept Redridge Rendezvous##2281 |goto Stormwind City 75.76,60.36
 |only if Rogue
 step
+talk Gnoarn##6569 |goto 69.6,50.5
+accept Speak with Shoni##2041
+|only if NightElf
+step
+'take the Deeprun Tram to Stormwind |goto Ironforge 76.6,51.1
+talk Shoni The Silent##6579 |goto Stormwind 62.7,34.1
+turnin Speak with Shoni##2041
+|only if NightElf
+step
+talk Sheldras Moontree##5504 |goto Stormwind 35.9,67.3
+|tip learn skills as you should be 18 now
+talk Argos Nightwhisper##4984
+accept The Corruption Abroad##3765
+|only if NightElf Druid
+step
+talk Innkeeper Allison##6740 |goto 60.4,75.2 |only if NightElf Druid
+home Stormwind |only if NightElf Druid
+|tip Druid can use teleport moonglade to get back to Darkshore |only if NightElf Druid
+talk Dungar Longdrink##352 |goto 70.9,72.7
+fpath Stormwind
+|only if not Human
+step
+talk Thor##523 |goto Westfall##55.6,52.5
+fpath Sentinel Hill
+|only if NightElf Druid
+step
+'Head over to the coast and swim out
 click Strange Lockbox
 |tip Underwater.
 collect Half Pendant of Aquatic Endurance##15882 |goto Westfall 17.87,33.11 |q 272
 |only if NightElf Druid
 step
+cast Teleport:Moonglade##18960
 use the Half Pendant of Aquatic Agility##15883
 collect Pendant of the Sea Lion##15885 |q 272/1 |goto Moonglade 35.92,41.42
 |only if NightElf Druid
 step
+cast Teleport:Moonglade##18960
 talk Dendrite Starblaze##11802
 |tip Upstairs inside the building.
 turnin Trial of the Sea Lion##272 |goto Moonglade 56.21,30.64
 accept Aquatic Form##5061 |goto Moonglade 56.21,30.64
+'fly to Darnassus |goto Moonglade 44.2,45.2
 |only if NightElf Druid
 step
 Enter the building |goto Darnassus 35.49,10.63 < 10 |walk
 talk Mathrengyl Bearwalker##4217
 |tip Upstairs inside the building, on the top floor.
 turnin Aquatic Form##5061 |goto Darnassus 35.37,8.39
+'Hearth to Stormwind|goto Stormwind 60.4,75.2 |use Hearthstone##6948|noway
 |only if NightElf Druid
 ]]
 )
