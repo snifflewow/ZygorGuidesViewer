@@ -26,14 +26,17 @@ talk Wizbang Cranktoggle##3666
 |tip Upstairs inside the building.
 accept Buzzbox 827##983 |goto Darkshore 36.98,44.14
 step
+talk Innkeeper Shaussy##6737
+home Auberdine |goto Auberdine 37,44
+step
 talk Gwennyth Bly'Leggonde##10219
 accept Washed Ashore##3524 |goto Darkshore 36.62,45.59
 step
 talk Caylais Moonfeather##3841
 fpath Auberdine |goto Darkshore 36.34,45.58
 step
-talk Quartermaster Nyana##10218
-turnin Welcome to Auberdine##26203 |goto Darkshore 37.37,45.12
+accept Wanted: Mistfin##26207 |goto Darkshore 37.70,43.39
+|tip from the wanted sign
 step
 talk Barithras Moonshade##3583
 accept Cave Mushrooms##947 |goto Darkshore 37.32,43.64
@@ -44,7 +47,13 @@ talk Sentinel Glynda Nal'Shea##2930
 |tip She walks around this area.
 accept The Red Crystal##4811 |goto Darkshore 37.70,43.39
 accept Balancing the Forest##26200 |goto Darkshore 37.70,43.39
-accept Wanted: Grizzletooth##26208 |goto Darkshore 37.70,43.39
+step
+talk Bill Wheeland##45038
+accept My Sister Isabetta##27205 |goto Darkshore 37.5,41.6
+accept The Greymist Menace##26204 |goto Darkshore 37.5,41.6
+step
+talk Quartermaster Nyana##10218
+turnin Welcome to Auberdine##26203 |goto Darkshore 37.37,45.12
 step
 Enter the building |goto Darkshore 37.77,41.36 < 15 |walk
 talk Dalmond##4182
@@ -52,14 +61,13 @@ talk Dalmond##4182
 |tip If you can afford it, and you need more bag space, buy bags.
 Visit the Vendor |vendor Dalmond##4182 |goto Darkshore 37.45,40.50 |q 4811
 step
-talk Bill Wheeland##45038
-accept My Sister Isabetta##27205 |goto Darkshore 37.5,41.6
-accept The Greymist Menace##26204 |goto Darkshore 37.5,41.6
-step
 talk Thundris Windweaver##3649
 |tip Inside the building.
 accept Bashal'Aran##954 |goto Darkshore 37.39,40.13
 accept Tools of the Highborne##958 |goto Darkshore 37.39,40.13
+step
+talk Gorbold Steelhand##6301
+accept Deep Ocean, Vast Sea##982 |goto Darkshore 38.11,41.17
 step
 talk Tharnariun Treetender##3701
 accept Plagued Lands##2118 |goto Darkshore 38.84,43.42
@@ -73,6 +81,11 @@ click Beached Sea Creature##175207
 |tip There are several murlocs surrounding the corpse. |only if hardcore
 |tip When low health, they will run away, so try to pull them a good deal away from the beached sea creature. |only if hardcore
 collect Sea Creature Bones##12242 |q 3524/1 |goto Darkshore 36.39,50.88
+step
+optional kill Arteris the Exile |goto Darkshore 35.1,54.8
+|tip rare lvl 17 that drops a strong weapon
+|tip skip if soul of iron or he is not spawned
+|only if Druid
 step
 label "Collect_Crawler_Legs"
 kill Pygmy Tide Crawler##2231+
@@ -96,30 +109,6 @@ Run up the ramp |goto Darkshore 36.70,45.02 < 10 |only if walking
 talk Gwennyth Bly'Leggonde##10219
 turnin Washed Ashore##3524 |goto Darkshore 36.62,45.59
 accept Washed Ashore##4681 |goto Darkshore 36.62,45.59
-stickystart "Collect_Thresher_Eyes"
-step
-Run on the dock and jump into the water here |goto Darkshore 32.42,43.82 < 20 |only if walking
-click Skeletal Sea Turtle##176189
-|tip Underwater.
-|tip Don't linger underwater for any reason. |only if hardcore
-|tip If you get into combat, swim to the surface and kill the enemy, then try again. |only if hardcore
-collect Sea Turtle Remains##12289 |q 4681/1 |goto Darkshore 31.87,46.32
-step
-Run up the ramp |goto Darkshore 36.70,45.02 < 10 |only if walking
-talk Gwennyth Bly'Leggonde##10219
-turnin Washed Ashore##4681 |goto Darkshore 36.62,45.59
-stickystop "Collect_Thresher_Eyes"
-step
-talk Isabetta Wheeland##46067
-|tip At her home on an island south of Auberdine.
-'complete My Sister Isabetta |q 27205/1 |goto Darkshore 32.00,64.00
-step
-talk Isabetta Wheeland##46067
-turnin My Sister Isabetta##27205 |goto Darkshore 32.00,64.00
-step
-talk Innkeeper Shaussiy##6737
-|tip Inside the building.
-home Auberdine |goto Darkshore 37.04,44.12
 step
 talk Tharnariun Treetender##3701
 turnin Plagued Lands##2118 |goto Darkshore 38.84,43.42
@@ -131,10 +120,44 @@ turnin How Big a Threat?##984 |goto Darkshore 39.37,43.48
 accept How Big a Threat?##985 |goto Darkshore 39.37,43.48
 accept Thundris Windweaver##4761 |goto Darkshore 39.37,43.48
 step
-talk Gorbold Steelhand##6301
-accept Deep Ocean, Vast Sea##982 |goto Darkshore 38.11,41.17
+stickystart "Collect_Thresher_Eyes"
+Run on the dock and jump into the water here |goto Darkshore 32.42,43.82 < 20 |only if walking
+click Skeletal Sea Turtle##176189
+|tip Underwater.
+|tip Don't linger underwater for any reason. |only if hardcore
+|tip If you get into combat, swim to the surface and kill the enemy, then try again. |only if hardcore
+collect Sea Turtle Remains##12289 |q 4681/1 |goto Darkshore 31.87,46.32
+step
+talk Isabetta Wheeland##46067 |goto Darkshore 30.2,47.7
+turnin My Sister Isabetta |q 27205
+accept My Sister Isabetta |q 27206
+step
+collect Second clue |q 27206/2 |goto 30.3,47.8
+|tip it the footprint right outside the burnt down ouse
+collect First clue |q 27206/1 |goto 30.4,47.8
+|tip its a really small ball right on the floor inside the house
+|tip just by the door
+collect Third clue |q 27206/3 |goto 30.2,48.2
+|tip the boat on the shore
+step
+kill Mistfin##45040 |q 26207/1 |goto 27.9,54.7
+|tip It's a Thresher swimming along the bottom in this area
+|tip pull him to the surface like most underwater mobs
+stickystop "Collect_Thresher_Eyes"
+step
+Run up the ramp |goto Darkshore 36.70,45.02 < 10 |only if walking
+talk Gwennyth Bly'Leggonde##10219
+turnin Washed Ashore##4681 |goto Darkshore 36.62,45.59
+step
+talk Sentinel Glynda Nal'Shea##2930
+turnin Wanted: Mistfin##26207
+step
+talk Bill Wheeland##45038
+turnin My Sister Isabetta##27206
 step
 Enter the building |goto Darkshore 37.77,41.36 < 15 |walk
+talk Quartermaster Nyana##45036
+|tip buy reputation gloves if you can afford it
 talk Dalmond##4182
 |tip Inside the building.
 |tip If you can afford it, and you need more bag space, buy bags.
@@ -150,6 +173,7 @@ Kill enemies around this area
 |tip Being a level higher will help.
 ding 14 |goto Darkshore 39.01,35.63
 stickystart "Collect_Thresher_Eyes"
+stickystart "kill_graymist_part1"
 step
 _NOTE:_
 Incoming Underwater Quest
@@ -190,6 +214,10 @@ click Beached Sea Creature##175233
 |tip Greymist Coastrunners will run away quickly when at low health, so pull them away from the beached sea creature as best possible. |only if hardcore
 accept Beached Sea Creature##4723 |goto Darkshore 41.88,31.55
 step
+label "kill_graymist_part1"
+kill 6 Greymist Seer##2203 |q 26204/2
+kill 6 Greymist Coastrunner##2202 |q 26204/1
+step
 talk Asterion##3650
 turnin Bashal'Aran##954 |goto Darkshore 44.17,36.29
 accept Bashal'Aran##955 |goto Darkshore 44.17,36.29
@@ -213,10 +241,18 @@ step
 talk Asterion##3650
 turnin Bashal'Aran##956 |goto Darkshore 44.17,36.30
 accept Bashal'Aran##957 |goto Darkshore 44.17,36.30
+stickystart "kill_moonkin_part1"
 step
 Locate the Large, Red Crystal on Darkshore's Eastern Mountain Range |q 4811/1 |goto Darkshore 47.29,48.69
 |tip The moonkin around this area tend to aggro from a wide range. |only if hardcore
 |tip Raging Moonkin will enrage when near death. |only if hardcore
+step
+label "kill_moonkin_part1"
+kill 10 Moonkin#10158+ |q 26200/1
+kill 5 Young Moonkin##10159+ |q 26200/2
+You can find more around: |notinsticky
+[42.7,45.6]
+[42.9,50.8]
 step
 talk Gwennyth Bly'Leggonde##10219
 turnin Beached Sea Creature##4723 |goto Darkshore 36.62,45.59
@@ -225,30 +261,18 @@ talk Sentinel Glynda Nal'Shea##2930
 |tip She walks around this area.
 turnin The Red Crystal##4811 |goto Darkshore 37.71,43.39
 accept As Water Cascades##4812 |goto Darkshore 37.71,43.39
-step
-kill 5 Young Moonkin##2106+
-kill 10 Moonkin##2105+
-collect quest objectives for Balancing the Forest |q 26200/1 |goto Darkshore 45.50,50.00
-|tip These are in the moonkin area east of Auberdine.
-step
-talk Sentinel Glynda Nal'Shea##2930
-|tip She walks around this area.
 turnin Balancing the Forest##26200 |goto Darkshore 37.71,43.39
 accept Balancing the Forest##26201 |goto Darkshore 37.71,43.39
-step
-kill 3 Moonkin Oracle##10159+
-kill 10 Raging Moonkin##10160+
-collect quest objectives for Balancing the Forest follow-up |q 26201/1 |goto Darkshore 45.50,50.00
-|tip These are further back in the moonkin colony, east of Auberdine.
-step
-talk Sentinel Glynda Nal'Shea##2930
-|tip She walks around this area.
-turnin Balancing the Forest##26201 |goto Darkshore 37.71,43.39
 step
 use the Empty Water Tube##14338
 collect Moonwell Water Tube##14339 |q 4812/1 |goto Darkshore 37.79,44.06
 step
+talk Bill Wheeland##45038
+turnin The Greymist Menace##26204 |goto Darkshore 37.5,41.6
+step
 Enter the building |goto Darkshore 37.77,41.36 < 15 |walk
+talk Quartermaster Nyana##45036
+|tip buy reputation pants if you can afford it
 talk Dalmond##4182
 |tip Inside the building.
 |tip If you can afford it, and you need more bag space, buy bags.
@@ -257,13 +281,7 @@ step
 talk Gorbold Steelhand##6301
 |tip Outside the building.
 turnin Deep Ocean, Vast Sea##982 |goto Darkshore 38.11,41.17
-step
-Enter the cave |goto Darkshore 43.06,45.55 < 15 |walk
-use the Cenarion Moondust##15208
-|tip Inside the cave.
-kill Lunaclaw##12138
-Face Lunaclaw and Earn the Strength of Body and Heart it Possesses |q 6001/1 |goto Darkshore 43.48,45.96
-|only if NightElf Druid
+stickystart "kill_moonkin_part2"
 step
 Leave Auberdine |goto Darkshore 39.76,45.77 < 40 |only if walking and subzone("Auberdine")
 click Mysterious Red Crystal##175524
@@ -271,6 +289,12 @@ click Mysterious Red Crystal##175524
 |tip Approach the mysterious red crystal with great caution. |only if hardcore
 turnin As Water Cascades##4812 |goto Darkshore 47.29,48.69
 accept The Fragments Within##4813 |goto Darkshore 47.29,48.69
+step
+label "kill_moonkin_part2"
+kill 10 Raging Moonkin#10160+ |q 26201/1
+kill 3 Moonkin Oracle##10161+ |q 26201/2
+|tip these can be found inside the caves
+|tip very few spawn locations for these
 stickystart "Collect_Moonstalker_Fangs"
 step
 Kill enemies around this area
@@ -278,10 +302,6 @@ Kill enemies around this area
 |tip The moonkin around this area have a pretty large aggro radius. |only if hardcore
 |tip Watch for respawns while in the area. |only if hardcore
 ding 15 |goto Darkshore 44.53,46.29
-step
-talk Sentinel Glynda Nal'Shea##2930
-|tip She walks around this area.
-turnin The Fragments Within##4813 |goto Darkshore 37.71,43.39
 step
 talk Sentinel Tysha Moonblade##3639
 accept The Fall of Ameth'Aran##953 |goto Darkshore 40.30,59.73
@@ -307,9 +327,6 @@ Kill Highborne enemies around this area
 collect 7 Highborne Relic##5360 |q 958/1 |goto Darkshore 43.07,60.24
 step
 label "Collect_Anyas_Pendant"
-map Darkshore
-path follow strict; loop on; ants straight; dist 30; markers none
-path	42.85,62.22	42.66,60.80	43.64,59.99	42.41,58.48	41.43,60.57
 kill Anaya Dawnrunner##3667
 |tip She looks like a neutral female night elf ghost, in a green and yellow robe.
 |tip She may spawn in multiple locations, and walks around this area.
@@ -373,25 +390,8 @@ click Beached Sea Turtle##176190
 |tip Greymist Coastrunners will run away quickly when at low health, so pull them away from the creature as best possible. |only if hardcore
 accept Beached Sea Turtle##4722 |goto Darkshore/0 37.14,62.16
 step
-kill Greymist Murlocs around this area
-collect quest objectives for The Greymist Menace |q 26204/1 |goto Darkshore 36.00,55.00
-|tip These are found along the southern Darkshore coast.
-step
-kill Greymist Murlocs further south
-collect quest objectives for The Greymist Menace follow-up |q 26205/1 |goto Darkshore 33.00,60.00
-|tip These are stronger murlocs found further south along the coast.
-step
-Travel to Blackwood Den in southern Darkshore |goto Darkshore 35.50,79.00
-kill Grizzletooth##45041
-|tip This bear is at Blackwood Den, near the Ashenvale border.
-'complete Wanted: Grizzletooth |q 26208/1 |goto Darkshore 35.50,79.00
-stickystart "Kill_Blackwood_Windtalkers"
-step
 kill 8 Blackwood Pathfinder##2167 |q 985/1 |goto Darkshore/0 39.93,56.19
 |tip These enemies may run away when at low health. |only if hardcore
-You can find more around [39.81,53.87]
-step
-label "Kill_Blackwood_Windtalkers"
 kill 5 Blackwood Windtalker##2324 |q 985/2 |goto Darkshore/0 39.93,56.19
 |tip These enemies may run away when at low health. |only if hardcore |notinsticky
 |tip These enemies can temporarily pacify you, leaving you vulnerable to damage. You can avoid this by backing away during their cast.|only if hardcore |notinsticky
@@ -411,29 +411,23 @@ Teach Your Voidwalker Sacrifice (Rank 1) |learnpetspell Sacrifice##7812
 |tip You need to have your voidwalker active to be able to learn these new spells.
 |only if Warlock
 step
-Run up the ramp inside the building |goto Darkshore/0 36.85,44.12 < 10 |only if walking
-talk Cerellean Whiteclaw##3644
-|tip On the dock.
-turnin For Love Eternal##963 |goto Darkshore/0 35.74,43.71
-step
-talk Gubber Blump##10216
-accept Fruit of the Sea##1138 |goto Darkshore/0 36.09,44.93
-step
 Run up the ramp |goto Darkshore/0 36.70,45.01 < 10 |only if walking
 talk Gwennyth Bly'Leggonde##10219
 turnin Beached Sea Turtle##4722 |goto Darkshore/0 36.62,45.60
 turnin Beached Sea Creature##4728 |goto Darkshore/0 36.62,45.60
 step
-talk Bill Wheeland##45038
-turnin The Greymist Menace##26204 |goto Darkshore 37.5,41.6
-accept The Greymist Menace##26205 |goto Darkshore 37.5,41.6
+talk Gubber Blump##10216
+accept Fruit of the Sea##1138 |goto Darkshore/0 36.09,44.93
 step
-talk Bill Wheeland##45038
-turnin The Greymist Menace##26205 |goto Darkshore 37.5,41.6
+Run up the ramp inside the building |goto Darkshore/0 36.85,44.12 < 10 |only if walking
+talk Cerellean Whiteclaw##3644
+|tip On the dock.
+turnin For Love Eternal##963 |goto Darkshore/0 35.74,43.71
 step
 talk Sentinel Glynda Nal'Shea##2930
 |tip She walks around this area.
-turnin Wanted: Grizzletooth##26208 |goto Darkshore 37.70,43.39
+turnin The Fragments Within##4813 |goto Darkshore 37.71,43.39
+turnin Balancing the Forest##26201 |goto Darkshore 37.71,43.39
 step
 talk Tharnariun Treetender##3701
 turnin Cleansing of the Infected##2138 |goto Darkshore/0 38.84,43.41
@@ -452,21 +446,6 @@ talk Thundris Windweaver##3649
 |tip Inside the building.
 turnin Tools of the Highborne##958 |goto Darkshore/0 37.40,40.13
 accept The Cliffspring River##4762 |goto Darkshore/0 37.40,40.13
-step
-talk Asterion##3650
-turnin Bashal'Aran##957 |goto Darkshore/0 44.17,36.30
-step
-talk Archaeologist Everit##46076
-accept Personal Possessions##27223 |goto Darkshore 35.7,83.6
-accept Rampaging Golems##27224 |goto Darkshore 35.7,83.6
-step
-collect Archaeologist Everit's personal possessions around the excavation |q 27223/1 |goto Darkshore 35.7,83.6
-step
-kill Cracked Golem and Stone Behemoth enemies around the excavation |q 27224/1 |goto Darkshore 35.7,83.6
-step
-talk Archaeologist Everit##46076
-turnin Personal Possessions##27223 |goto Darkshore 35.7,83.6
-turnin Rampaging Golems##27224 |goto Darkshore 35.7,83.6
 step
 Enter the building |goto Darnassus 35.49,10.63 < 10 |walk
 talk Mathrengyl Bearwalker##4217
@@ -497,6 +476,9 @@ talk Tajarri##11799
 turnin Trial of the Lake##29 |goto Moonglade 36.51,40.11
 accept Trial of the Sea Lion##272 |goto Moonglade 36.51,40.11
 |only if NightElf Druid
+step
+talk Asterion##3650
+turnin Bashal'Aran##957 |goto Darkshore/0 44.17,36.30
 step
 Incoming Cave Step
 |tip The upcoming steps require you to navigate a dangerous cave.
@@ -537,10 +519,10 @@ step
 use the Empty Sampling Tube##12350
 |tip In the water, at the bottom of the waterfall.
 collect Cliffspring River Sample##12349 |q 4762/1 |goto Darkshore 50.84,25.50
+stickystart "Collect_Fine_Crab_Chunks"
 step
 click Beached Sea Turtle##176196
 accept Beached Sea Turtle##4727 |goto Darkshore 53.09,18.15
-stickystart "Collect_Fine_Crab_Chunks"
 step
 click Beached Sea Turtle##176197
 accept Beached Sea Turtle##4725 |goto Darkshore 44.21,20.64
@@ -570,8 +552,6 @@ turnin Beached Sea Turtle##4725 |goto Darkshore 36.62,45.60
 step
 talk Barithras Moonshade##3583
 turnin Cave Mushrooms##947 |goto Darkshore 37.32,43.64
-accept Onu##948 |goto Darkshore 37.32,43.64
-|tip You must have completed the previous quest for this to appear. |only if hardcore
 step
 Enter the building |goto Darkshore 37.77,41.36 < 15 |walk
 talk Dalmond##4182
@@ -655,17 +635,41 @@ talk Syurna##4163
 Train the "Pick Lock" Ability |skillmax Lockpicking,75 |goto Darnassus 36.99,21.91
 |only if Rogue
 step
-talk Jocaste##4146 |only if Hunter
-talk Syurna##4163 |only if Rogue
-talk Sildanair##4089 |only if Warrior
-talk Denatharion##4218 |only if Druid
-talk Jandria##4091 |only if Priest
-trainer Jocaste##4146 |goto Darnassus/0 40.40,8.58 |only if Hunter |q 436 |future
-trainer Sildanair##4089 |goto Darnassus/0 61.78,42.28 |only if Warrior |q 436 |future
-trainer Syurna##4163 |goto Darnassus/0 36.97,21.86 |only if Rogue |q 436 |future
-trainer Denatharion##4218  |goto Darnassus/0 34.74,7.43 |only if Druid |q 436 |future
-trainer Jandria##4091 |goto Darnassus/0 37.91,82.80 |only if Priest |q 436 |future
+'fly to darnassus
+talk Jocaste##4146 |goto Darnassus/0 40.40,8.58 |only if Hunter |q 436 |future
+talk Sildanair##4089 |goto Darnassus/0 61.78,42.28 |only if Warrior |q 436 |future
+talk Syurna##4163 |goto Darnassus/0 36.97,21.86 |only if Rogue |q 436 |future
+talk Denatharion##4218  |goto Darnassus/0 34.74,7.43 |only if Druid |q 436 |future
+talk Jandria##4091 |goto Darnassus/0 37.91,82.80 |only if Priest |q 436 |future
 |tip In the basement of the tree. |only if Rogue
 |tip Train your spells.
+|only if NightElf
+step
+fly back to Darkshore
+|only if NightElf
+step
+'head to the end of the docks for the boats
+|goto Darkshore 32.4,43.8
+'take the boat to menethil harbor
+step
+talk Shelly Brondir##1571
+'fly to Loch Modan
+|goto Loch Modan 33.9,51.3
+|only if not NightElf
+step
+talk Shelly Brondir##1571 |goto Wetlands 9.5,59.7
+fpath Menethil Harbor
+|only if NightElf
+step
+'Head to Loch Modan while staying on the road to avoid enemies
+|goto Wetlands 12.6,49.8
+|goto Wetlands 49.8,39
+|goto Wetlands 56.2,52.8
+|goto Wetlands 54.2,70.3
+'follow the tunnels and road up to Loch Modan
+|goto Loch Modan 33.8,50.9
+talk Thorgrum Borrelson
+fpath Loch Modan
+|only if NightElf
 ]]
 )
